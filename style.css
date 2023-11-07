@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: beige;
+    height: 80px;
+}
+
+.container {
+    display: flex;
+    /* justify-content: space-between; */
+    width: 80%;
+    margin: auto;
+    /* margin-left: 10%;
+    margin-right: 10%; */
+}
+
+.header .container {
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+
+  .navbar {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+  }
+
+  .titulo {
+    width: fit-content;
+    font-weight: 500;
+  }
+
+
+
+/* banner (tem q ver ainda) */
+  .banner {
+    /* height: calc(100vh - 80px - 65px - 2px);
+    background-image: url(''); */
+    background-color: black;
+    background-size: cover;
+  }
+  
+  .banner .container {
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .banner .container p {
+    font-size: 36px;
+    color: white;
+    width: 280px;
+  }
+  
+  .banner .container span {
+    font-weight: 800;
+  }
+
