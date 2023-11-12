@@ -18,13 +18,13 @@ body {
 }
 
 .header .container {
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     height: 100%;
   }
 
   .navbar {
-    width: 300px;
+    width: 500px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -36,29 +36,41 @@ body {
     font-weight: 500;
   }
 
+ 
 
 
 /* banner (tem q ver ainda) */
   .banner {
-    /* height: calc(100vh - 80px - 65px - 2px);
-    background-image: url(''); */
-    background-color: black;
-    background-size: cover;
+    /* height: calc(100vh - 80px - 65px - 2px); */
+    
+      
+      background-image: url('src/imagem.jpeg'); 
+      /* background-color: rgba(0, 0, 0, 0.5);    */
+      background-size: cover;
+      height: 500px;
+      opacity: 0.9;
+  }
+
+  .banner .container-banner {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10%;
   }
   
-  .banner .container {
-    justify-content: center;
+  .banner .container-banner {
+    /* justify-content: center; */
     align-items: center;
-    height: 100%;
+    /* height: 100%; */
   }
-  
-  .banner .container p {
+
+  .banner .container-banner p {
     font-size: 36px;
     color: white;
-    width: 280px;
+    /* width: 280px; */
+
   }
   
-  .banner .container span {
+  /* .banner .container span {
     font-weight: 800;
-  }
+  } */
 
