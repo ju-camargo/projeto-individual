@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
 
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <!-- header -->
     <div class="header">
@@ -26,15 +28,64 @@
     <!-- banner tela inicial -->
     <div class="banner">
         <div class="container-banner">
-          <!-- <p>Preservando <span>hoje</span> para existirem <span>amanhã</span>.</p> -->
-          <p>Harry Potter</p>
+            <!-- <p>Preservando <span>hoje</span> para existirem <span>amanhã</span>.</p> -->
+            <p>Harry Potter</p>
         </div>
     </div>
 
     <!-- filmes -->
     <div class="filmes">
-        
+        <!-- carrossel -->
     </div>
-    
+
+    <!-- chapéu seletor -->
+    <div class="chapeu-seletor">
+        <div class="img_chapeu">
+            <!-- imagem do chapeu seletor -->
+        </div>
+
+        <!-- formulario -->
+        <div class="form">
+            <h2>Faça um teste para ver qual é a sua casa:</h2>
+            <button>Quiz</button>
+            
+            <!-- quiz -->
+            <form id="quiz">
+
+                <!-- questao 1 -->
+                <p>Qual qualidade você mais valoriza?</p>
+                <label>
+                  <input type="radio" name="questao1" value="coragem"> Coragem
+                </label>
+
+                <label>
+                  <input type="radio" name="questao1" value="inteligência"> Inteligência
+                </label>
+
+                <label>
+                    <input type="radio" name="questao1" value="inteligência"> Lealdade
+                  </label>
+                
+                <label>
+                    <input type="radio" name="questao1" value="inteligência"> Sabedoria
+                </label>
+
+                <!-- Adicione mais perguntas e opções aqui -->
+                <button type="button" onclick="sortUser()">Selecionar Casa</button>
+              </form>
+              <div id="result"></div>
+
+            <form action="" method="post">
+                <input type="text" placeholder="Nome" required class="inp_contato">
+                <input type="text" placeholder="Email" required class="inp_contato">
+                <input type="text" placeholder="Como podemos ajudar?" required class="inp_contato"><br>
+
+                <button type="submit" class="btn-contato">Enviar</button>
+            </form>
+        </div>
+
+    </div>
+
 </body>
+
 </html>
