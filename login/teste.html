@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+
+    <link rel="stylesheet" href="teste.css">
+</head>
+
+<body>
+
+    <!-- header -->
+    <!-- <div class="header">
+        <div class="container-header"> -->
+    <!-- <h2 class="titulo">Harry Potter</h2> -->
+
+    <!-- <ul class="navbar">
+                <li>Sobre</li>
+                <li>Filmes</li>
+                <li>Chapéu seletor</li>
+                <li>Login</li>
+            </ul>
+        </div>
+    </div> -->
+
+
+    <div class="header-cont">
+        <p>Home</p>
+        <p>Login</p>
+    </div>
+
+    <div class="container">
+        <!-- <div class="imagem-cont">
+            <img src="plataforma (2).jpg" alt="" style="width: 400px;">
+        </div> -->
+
+        <!-- <div class="div_central"> -->
+            
+
+            <div class="cadastro">
+                <div class="div_titulo">
+                    <h2>Cadastre-se <br>
+                        para saber qual a <br>
+                        sua casa em <br>
+                        Harry Potter!</h2>
+                </div>
+
+                <div class="card card-cadastro">
+
+                    <div class="formulario">
+                        <!-- <h2>Cadastre-se</h2> -->
+
+                        <div class="campo">
+                            <!-- <span>Nome:</span> -->
+                            <input id="inp_nome" type="text" placeholder="Nome">
+                            <span class="span-required">Nome deve ter no mínimo 3 caracteres</span>
+                        </div>
+
+                        <div class="campo" maxlength="18">
+                            <!-- <span>CPF:</span> -->
+                            <input id="inp_cpf" type="number" placeholder="CPF">
+                            <span class="span-required">O CPF deve ter 11 dígitos</Span>
+                        </div>
+
+                        <div class="campo">
+                            <!-- <span>Email:</span> -->
+                            <input id="inp_email" type="text" placeholder="Email">
+                            <span class="span-required">Digite um email válido</span>
+                        </div>
+
+                        <div class="campo">
+                            <!-- <span>Senha:</span> -->
+                            <input id="inp_senha" type="text" placeholder="Senha">
+                            <!-- <span class="span-required">Digite um email válido</span> -->
+                        </div>
+
+                        <div class="campo">
+                            <!-- <span>Confirmação da Senha:</span> -->
+                            <input id="confirmacao_senha_input" type="password" placeholder="Confirmação de senha" />
+                            <!-- <span class="span-required">Digite um email válido</span> -->
+                        </div>
+
+                        <button onclick="cadastrar()" id="cadastrar">Cadastrar</button>
+                    </div>
+                </div>
+            </div>
+        <!-- </div> -->
+    </div>
+
+</body>
+
+</html>
+<script>
+    var campos = document.querySelectorAll('.campo');
+    var spans = document.querySelectorAll('.span-required');
+
+    function erro(index) {
+        campos[index].style.border = '2px solid #e63636';
+        spans[index].style.display = 'block';
+    }
+
+    function removerErro(index) {
+        campos[index].style.border = 'none';
+        spans[index].style.display = 'none';
+    }
+</script>

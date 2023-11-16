@@ -70,18 +70,29 @@
                     <input type="radio" name="questao1" value="inteligência"> Sabedoria
                 </label>
 
-                <!-- Adicione mais perguntas e opções aqui -->
-                <button type="button" onclick="sortUser()">Selecionar Casa</button>
+                <!-- questao 2 -->
+                <p>O que você valoriza mais em um amigo?</p>
+                <label>
+                  <input type="radio" name="questao1" value="coragem"> Coragem e ousadia
+                </label>
+
+                <label>
+                  <input type="radio" name="questao1" value="inteligência"> Inteligência e criatividade
+                </label>
+
+                <label>
+                    <input type="radio" name="questao1" value="inteligência"> Lealdade e amizade
+                  </label>
+                
+                <label>
+                    <input type="radio" name="questao1" value="inteligência"> Sabedoria e curiosidade
+                </label>
+
+
+                <button type="button" onclick="selecionarCasa()">Selecionar Casa</button>
               </form>
-              <div id="result"></div>
+              <div id="quiz_resultado"></div>
 
-            <form action="" method="post">
-                <input type="text" placeholder="Nome" required class="inp_contato">
-                <input type="text" placeholder="Email" required class="inp_contato">
-                <input type="text" placeholder="Como podemos ajudar?" required class="inp_contato"><br>
-
-                <button type="submit" class="btn-contato">Enviar</button>
-            </form>
         </div>
 
     </div>
@@ -89,3 +100,39 @@
 </body>
 
 </html>
+<script>
+    function selecionarCasa(){
+        var respostas = document.forms['quiz'].elements;
+        var casa = "";
+        
+        if(casa == ""){
+            div_resultado.innerHTML = ``
+        }
+    }
+        
+
+//   function sortUser() {
+//   const answers = document.forms['sorting-hat-quiz'].elements;
+//   let house = '';
+
+//   for (let i = 0; i < answers.length; i++) {
+//     if (answers[i].checked) {
+//       if (answers[i].value === 'coragem') {
+//         house = 'Grifinória';
+//       } else if (answers[i].value === 'inteligência') {
+//         house = 'Corvinal';
+//       }
+//       // Adicione mais lógica para outras casas e perguntas aqui
+//       break; // Saia do loop após encontrar a primeira resposta
+//     }
+//   }
+
+//   if (house !== '') {
+//     document.getElementById('result').textContent = `Sua casa é: ${house}`;
+//   } else {
+//     document.getElementById('result').textContent = 'Por favor, responda todas as perguntas.';
+//   }
+// }
+
+    
+</script>
