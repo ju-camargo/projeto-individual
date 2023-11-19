@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="quiz.css">
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cadastro</title>
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+
+        <div class="box-maior">
+            <div class="inner-box">
+                <div class="div_esquerda">
+                    <!-- quiz -->
+                    <form id="quiz">
+
+                        <!-- questao 1 -->
+                        <div id="div_questao1">
+                            <p>Qual qualidade você mais valoriza?</p>
+                            <input type="radio" id="questao1A" value="grifinoria"> Coragem
+                            <br>
+
+                            <input type="radio" id="questao1B" value="corvinal"> Inteligência
+                            <br>
+
+                            <input type="radio" id="questao1C" value="lealdade"> Lealdade
+                            <br>
+
+                            <input type="radio" id="questao1D" value="sabedoria"> Sabedoria
+                            <br> <br>
+                            
+                            <button onclick="guardarResposta()">Proximo</button>
+                        </div>
+
+                        <div id="div_questao2" style="display: none;">
+                            <p>Qual valor você mais valoriza?</p>
+                            <input type="radio" id="questao1A" value="grifinoria"> Coragem
+                            <br>
+
+                            <input type="radio" id="questao1B" value="corvinal"> Inteligência
+                            <br>
+
+                            <input type="radio" id="questao1C" value="lealdade"> Lealdade
+                            <br>
+
+                            <input type="radio" id="questao1D" value="sabedoria"> Sabedoria
+                            <br> <br>
+                        </div>
+
+                        <button type="button" onkeyup="selecionarCasa()">Selecionar
+                            Casa</button>
+                    </form>
+
+                </div>
+
+                <div class="div_direita">
+                    <p>Sua casa é:</p> <br>
+                    <div id="div_resultado"></div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </body>
+
+    </html>
+
+    <script>
+        var respostas = [];
+
+        function guardarResposta() {
+            resposta1a = questao1A.value;
+            resposta1b = questao1B.value;
+
+
+            if (resposta1a.checked || respostab.checked) {
+                respostas.push(resposta1a);
+                respostas.push(resposta1b);
+                div_questao1.innerHTML = "";
+                div_questao2.style.display = 'block';
+            } else {
+                alert(`Selecione uma opção`);
+            }
+
+            // if(resposta1 == "Coragem" || resposta1 == "Inteligência"){
+            //     div_questao1.innerHTML = "";
+            //     div_questao2.style.display = 'block';
+            // }
+        }
+
+        function selecionarCasa() {
+            var casa = "";
+
+            pontosGrif = 0;
+            pontosCorv = 0;
+            pontosLufa = 0;
+            pontosSons = 0;
+
+            for (var i = 0; i < respostas.length; i++) {
+
+                if (respostas[i] == 'grifinoria') {
+                    pontosGrif += 3;
+                }
+                else if (respostas[i] == 'corvinal') {
+                    pontosCorv += 3;
+                }
+                else if (respostas[i] == 'lufalufa') {
+                    pontosLufa += 3;
+                }
+                else if (respostas[i] == 'sonserina') {
+                    pontosSons += 3;
+                }
+
+            }
+
+            if (pontosGrif > pontosCorv && pontosGrif > pontosLufa) {
+                casa = `Grifinória`
+            }
+            else {
+                casa = `Corvinal`
+            }
+
+            div_resultado.innerHTML = `${casa}`
+        }
+    </script>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz | Chapéu seletor</title>
+    <link rel="stylesheet" href="quiz.css">
+</head>
+
+<body>
+    <div class="box-maior">
+        <div class="inner-box">
+            <div class="div_esquerda">
+                <!-- quiz -->
+                <div id="quiz">
+
+                    <div id="div_inicio">
+                        <button id="btn-quiz" onclick="iniciar()">Iniciar quiz</button>
+                    </div>
+
+                    <div id="div_questao1" style="display: none;">
+
+                        <p>Qual qualidade você mais valoriza?</p> <br>
+                        <button id="btn-questao" onclick="selecionarResposta1('grifinoria')">
+                            <img src="src/circle-regular.svg" style="width: 10px;">
+                            Coragem
+                        </button> <br>
+
+                        <button id="btn-questao" onclick="selecionarResposta1('corvinal')">
+                            <img src="src/circle-regular.svg" style="width: 10px;">
+                            Inteligência
+                        </button> <br>
+
+                        <button id="btn-questao" onclick="selecionarResposta1('lufalufa')">
+                            <img src="src/circle-regular.svg" style="width: 10px;">
+                            Lealdade
+                        </button> <br>
+
+                        <button id="btn-questao" onclick="selecionarResposta1('sonserina')">
+                            <img src="src/circle-regular.svg" style="width: 10px;">
+                            Sabedoria
+                        </button> <br><br>
+
+                    </div>
+
+                    <div id="div_questao2" style="display: none;">
+
+                        <p>O que você mais valoriza em um amigo?</p> <br>
+                        <button id="btn-questao" onclick="selecionarResposta2('grifinoria')">
+                            <img src="src/circle-regular.svg" style="width: 10px;">
+                            Coragem e Ousadia
+                        </button><br>
+
+                        <button id="btn-questao" onclick="selecionarResposta2('corvinal')">
+                            <img src="src/circle-regular.svg" style="width: 10px;">
+                            Inteligência e Criatividade
+                        </button> <br>
+
+                        <button id="btn-questao" onclick="selecionarResposta2('lufalufa')">
+                            <img src="src/circle-regular.svg" style="width: 10px;">
+                            Lealdade e Amizade
+                        </button><br>
+
+                        <button id="btn-questao" onclick="selecionarResposta2('sonserina')">
+                            <img src="src/circle-regular.svg" style="width: 10px;">
+                            Sabedoria e Curiosidade
+                        </button> <br><br>
+
+                    </div>
+
+                    <div id="div_questao3" style="display: none;">
+
+                        <p>Como você gosta de passar seu tempo livre?</p> <br>
+                        <button id="btn-questao" onclick="selecionarResposta3('grifinoria')">
+                            <img src="src/circle-regular.svg" style="width: 10px;">
+                            Aventurando-se e enfrentando desafios
+                        </button> <br>
+
+                        <button id="btn-questao" onclick="selecionarResposta3('corvinal')">
+                            <img src="src/circle-regular.svg" style="width: 10px;">
+                            Lendo e aprendendo coisas novas</button> <br>
+
+                        <button id="btn-questao" onclick="selecionarResposta3('lufalufa')">
+                            <img src="src/circle-regular.svg" style="width: 10px;">
+                            Passando tempo com amigos e familiares
+                        </button> <br>
+
+                        <button id="btn-questao" onclick="selecionarResposta3('sonserina')">
+                            <img src="src/circle-regular.svg" style="width: 10px;">
+                            Resolvendo quebra-cabeças e enigmas
+                        </button> <br><br>
+
+                    </div>
+
+                    <div id="div_questao4" style="display: none;">
+
+                        <p>Em uma situação difícil, o que você prefere?</p> <br>
+                        <button id="btn-questao" onclick="selecionarResposta4('grifinoria')">
+                            <img src="src/circle-regular.svg" style="width: 10px;">
+                            Agir rapidamente, mesmo que seja arriscado
+                        </button> <br>
+
+                        <button id="btn-questao" onclick="selecionarResposta4('corvinal')">
+                            <img src="src/circle-regular.svg" style="width: 10px;">
+                            Pensar cuidadosamente e planejar a melhor abordagem
+                        </button> <br>
+
+                        <button id="btn-questao" onclick="selecionarResposta4('lufalufa')">
+                            <img src="src/circle-regular.svg" style="width: 10px;">
+                            Contar com o apoio de amigos e entes queridos
+                        </button> <br>
+
+                        <button id="btn-questao" onclick="selecionarResposta4('sonserina')">
+                            <img src="src/circle-regular.svg" style="width: 10px;">
+                            Usar seu conhecimento e sabedoria para resolver o problema
+                        </button> <br><br>
+
+                    </div>
+
+                    <div id="div_final" style="display: none;">
+
+                        <button type="button" id="btn-quiz" onclick="selecionarCasa()">Selecionar Casa</button> <br><br>
+                        <button id="btn-quiz" onclick="reiniciar()">Reiniciar</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="div_direita">
+
+                <p>Sua casa é:</p> <br>
+                <div id="div_resultado"></div>
+
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    var respostas = [];
+
+    function iniciar() {
+        div_inicio.innerHTML = "";
+        div_questao1.style.display = 'block';
+    }
+
+    function selecionarResposta1(resposta) {
+        respostas.push(resposta);
+        console.log(respostas);
+
+        div_questao1.innerHTML = "";
+        div_questao2.style.display = 'block';
+    }
+
+    function selecionarResposta2(resposta) {
+        respostas.push(resposta);
+        console.log(respostas);
+
+        div_questao2.innerHTML = "";
+        div_questao3.style.display = 'block';
+    }
+
+    function selecionarResposta3(resposta) {
+        respostas.push(resposta);
+        console.log(respostas);
+
+        div_questao3.innerHTML = "";
+        div_questao4.style.display = 'block';
+    }
+
+    function selecionarResposta4(resposta) {
+        respostas.push(resposta);
+        console.log(respostas);
+
+        div_questao4.innerHTML = "";
+        div_final.style.display = 'block';
+    }
+
+    function reiniciar() {
+        div_final.innerHTML = "";
+        div_inicio.innerHTML = `
+            <div id="div_inicio">
+                <button id="btn-quiz" onclick="iniciar()">Iniciar quiz</button>
+            </div>
+        ` ;
+    }
+
+    function selecionarCasa() {
+        var casa = "";
+
+        pontosGrif = 0;
+        pontosCorv = 0;
+        pontosLufa = 0;
+        pontosSons = 0;
+
+        for (var i = 0; i < respostas.length; i++) {
+            if (respostas[i] == 'grifinoria') {
+                pontosGrif += 3;
+            }
+            else if (respostas[i] == 'corvinal') {
+                pontosCorv += 3;
+            }
+            else if (respostas[i] == 'lufalufa') {
+                pontosLufa += 3;
+            }
+            else if (respostas[i] == 'sonserina') {
+                pontosSons += 3;
+            }
+        }
+
+        if (pontosGrif > pontosCorv && pontosGrif > pontosLufa) {
+            casa = `Grifinória`
+        }
+        else {
+            casa = `Corvinal`
+        }
+
+        div_resultado.innerHTML = `${casa}`
+    }
+</script>
