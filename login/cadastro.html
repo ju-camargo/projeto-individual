@@ -17,47 +17,46 @@
 
                 <!-- cadastro -->
                 <!-- <div id="div_cadastro" style="display: none;"> -->
-                    <div class="cadastro">
-                        <div class="cadastro-titulo">
-                            <p><b>Cadastre-se!</b></p>
-                            <p>Responda o formulário, e realize o <a href="login.html">login</a></p>
+                <div class="cadastro">
+                    <div class="cadastro-titulo">
+                        <p><b>Cadastre-se!</b></p>
+                        <p>Responda o formulário, e realize o <a href="login.html">login</a></p>
+                    </div>
+
+                    <form id="formulario_cadastro">
+                        <div class="campo">
+                            <!-- <span>Nome:</span> -->
+                            <input id="inp_nome" type="text" placeholder="Nome">
+                            <span class="span-required">Nome deve ter no mínimo <br> 3 caracteres</span>
                         </div>
 
-                        <form id="formulario_cadastro">
-                            <div class="campo">
-                                <!-- <span>Nome:</span> -->
-                                <input id="inp_nome" type="text" placeholder="Nome">
-                                <span class="span-required">Nome deve ter no mínimo 3 caracteres</span>
-                            </div>
+                        <div class="campo" maxlength="18">
+                            <!-- <span>CPF:</span> -->
+                            <input id="inp_cpf" type="number" placeholder="CPF">
+                            <span class="span-required" id="span_cpf">O CPF deve ter 11 dígitos</Span>
+                        </div>
 
-                            <div class="campo" maxlength="18">
-                                <!-- <span>CPF:</span> -->
-                                <input id="inp_cpf" type="number" placeholder="CPF">
-                                <span class="span-required">O CPF deve ter 11 dígitos</Span>
-                            </div>
+                        <div class="campo">
+                            <!-- <span>Email:</span> -->
+                            <input id="inp_email" type="text" placeholder="Email">
+                            <span class="span-required">Digite um email válido</span>
+                        </div>
 
-                            <div class="campo">
-                                <!-- <span>Email:</span> -->
-                                <input id="inp_email" type="text" placeholder="Email">
-                                <span class="span-required">Digite um email válido</span>
-                            </div>
+                        <div class="campo">
+                            <!-- <span>Senha:</span> -->
+                            <input id="inp_senha" type="text" placeholder="Senha">
+                            <!-- <span class="span-required">Digite um email válido</span> -->
+                        </div>
 
-                            <div class="campo">
-                                <!-- <span>Senha:</span> -->
-                                <input id="inp_senha" type="text" placeholder="Senha">
-                                <!-- <span class="span-required">Digite um email válido</span> -->
-                            </div>
+                        <div class="campo">
+                            <!-- <span>Confirmação da Senha:</span> -->
+                            <input id="confirmacao_senha_input" type="password" placeholder="Confirmação de senha" />
+                            <!-- <span class="span-required">Digite um email válido</span> -->
+                        </div>
 
-                            <div class="campo">
-                                <!-- <span>Confirmação da Senha:</span> -->
-                                <input id="confirmacao_senha_input" type="password"
-                                    placeholder="Confirmação de senha" />
-                                <!-- <span class="span-required">Digite um email válido</span> -->
-                            </div>
-
-                            <button onclick="cadastrar()" id="btn-form">Cadastrar</button>
-                        </form><!-- </div> -->
-                    </div>
+                        <button onclick="cadastrar()" id="btn-form">Cadastrar</button>
+                    </form><!-- </div> -->
+                </div>
                 <!-- </div> -->
 
             </div>
@@ -92,5 +91,22 @@
     function removerErro(index) {
         campos[index].style.border = 'none';
         spans[index].style.display = 'none';
+    }
+
+    function cadastrar(){
+        var cpf = Number(inp_cpf.value);
+        // var span_cpf = span_cpf.value;
+
+        // cpf.length > 0 || cpf.length < 11
+        if (cpf.length !== 11) {
+            erro(1)
+            // cpf.style.border = '2px solid #e63636';
+            // span_cpf.style.display = 'block';
+        }
+        else {
+            removerErro(1)
+            // cpf.style.border = 'none';
+            // span_cpf.style.display = 'none';
+        }
     }
 </script>

@@ -92,6 +92,23 @@ body {
     gap: 10px;
 }
 
+.campo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* validação */
+.span-required {
+    font-size: 12px;
+    /* margin: 3px 0 0 1px; */
+    color: red;
+    display: none;
+    /* width: 70%; */
+    margin-top: 5px;
+}
+
 #formulario_login {
     display: flex;
     flex-direction: column;
@@ -118,7 +135,7 @@ input {
     /* background-color: #2f231c; */
     border: none;
     border-radius: 5px;
-    color: beige;
+    /* color: beige; */
     height: 25px;
     /* padding: 5px; */
     font-family: 'League Spartan', sans-serif;
@@ -157,12 +174,4 @@ a {
 
 a:hover {
     box-shadow: inset 0 0 5px 2px rgba(0, 0, 0, 0.2);
-}
-
-/* validação */
-.span-required {
-    font-size: 12px;
-    margin: 3px 0 0 1px;
-    color: red;
-    display: none;
 }
