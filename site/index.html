@@ -14,13 +14,25 @@
     <!-- header -->
     <div class="header">
         <div class="container">
+
             <!-- <h2 class="titulo">Harry Potter</h2> -->
 
             <ul class="navbar">
                 <li>Sobre</li>
                 <li>Filmes</li>
-                <li>Chapéu seletor</li>
-                <li>Login</li>
+                <li>
+                    <a href="#chapeu">Chapéu seletor</a>
+                </li>
+            </ul>
+
+            <img src="/site/src/logo-branca.png" alt="" width="250px;">
+
+            <ul class="navbar">
+                <li>Sobre mim</li>
+                <li>Valores</li>
+                <li>
+                    <a href="">Login</a>
+                </li>
             </ul>
         </div>
     </div>
@@ -33,106 +45,163 @@
         </div>
     </div>
 
-    <!-- filmes -->
+    <!-- sobre -->
     <div class="filmes">
-        <!-- carrossel -->
+
+        <div class="sobre">
+            <h4>Sobre</h4>
+            <p>Harry Potter é uma série de filmes baseada em uma série
+                de livros escritas pela J.K.Rowling. A série é composta por
+                7 livros que narram a jornada do jovem bruxo Harry
+                Potter e seus amigos enquanto enfrentam desafios mágicos
+                e lutam contra o bruxo Lord Voldemort.</p>
+        </div>
+
+        <div class="catalogo">
+            <!-- carrossel -->
+            <div class="carrossel2" id="meuContainer2"></div>
+
+            <!-- <div class="cima">
+                <div class="card">
+                    <p>Harry Potter e a Pedra Filosofal</p>
+                    <img src="/site/src/pedra-filosofal.jpg" alt="" style="width: 60%;"> <br>
+                    <button id="btn-filme">Ver filme</button>
+                </div>
+
+                <div class="card">
+                    <p>Filme</p>
+                    [img filme]
+                    <button>Ver filme</button>
+                </div>
+
+                <div class="card">
+                    <p>Filme</p>
+                    [img filme]
+                    <button>Ver filme</button>
+                </div>
+            </div> -->
+
+            <div class="avaliacao">
+                <!-- <img src="/site/src/plat.png" alt="plataforma" style="width: 10%;"> -->
+
+                <p>Avalie os filmes de Harry Potter em até <br>
+                    5 estrelas, e deixe um review se desejar!
+                </p>
+
+                <button id="btn-avaliar">Avaliar</button>
+
+            </div>
+        </div>
+
     </div>
+
+    <!-- filmes -->
+    <!-- <div class="filmes"> -->
+    <!-- carrossel -->
+    <!-- </div> -->
 
     <!-- chapéu seletor -->
-    <div class="chapeu-seletor">
-        <div class="img_chapeu">
-            <!-- imagem do chapeu seletor -->
-        </div>
+    <div class="chapeu-filmes" id="chapeu">
+        <div class="casas">
+            <p>Casas em Hogwarts:</p>
 
-        <!-- formulario -->
-        <div class="form">
-            <h2>Faça um teste para ver qual é a sua casa:</h2>
-            <button>Quiz</button>
-            
-            <!-- quiz -->
-            <form id="quiz">
-
-                <!-- questao 1 -->
-                <p>Qual qualidade você mais valoriza?</p>
-                <label>
-                  <input type="radio" name="questao1" value="coragem"> Coragem
-                </label>
-
-                <label>
-                  <input type="radio" name="questao1" value="inteligência"> Inteligência
-                </label>
-
-                <label>
-                    <input type="radio" name="questao1" value="inteligência"> Lealdade
-                  </label>
-                
-                <label>
-                    <input type="radio" name="questao1" value="inteligência"> Sabedoria
-                </label>
-
-                <!-- questao 2 -->
-                <p>O que você valoriza mais em um amigo?</p>
-                <label>
-                  <input type="radio" name="questao1" value="coragem"> Coragem e ousadia
-                </label>
-
-                <label>
-                  <input type="radio" name="questao1" value="inteligência"> Inteligência e criatividade
-                </label>
-
-                <label>
-                    <input type="radio" name="questao1" value="inteligência"> Lealdade e amizade
-                  </label>
-                
-                <label>
-                    <input type="radio" name="questao1" value="inteligência"> Sabedoria e curiosidade
-                </label>
-
-
-                <button type="button" onclick="selecionarCasa()">Selecionar Casa</button>
-              </form>
-              <div id="quiz_resultado"></div>
+            <div class="carrossel" id="meuContainer"></div>
 
         </div>
+
+        <div class="chapeu-quiz">
+
+            <img src="/site/src/chapeu.png" alt="chapeu-seletor" style="width: 40%;"> <br>
+
+            <p>Veja qual é a sua casa em Hogwarts! <br>
+                Responda a um quiz e deixe o chapéu seletor <br>
+                determinar a qual casa você pertence.
+            </p>
+
+            <button id="btn-chapeu">Login</button>
+
+        </div>
+
+        <!-- <div class="filmes">
+            <img src="/site/src/plat.png" alt="plataforma" style="width: 25%;"> <br>
+
+            <p>Avalie os filmes de Harry Potter em até <br>
+                5 estrelas, e deixe um review se desejar!
+            </p>
+
+            <button id="btn-avaliar">Avaliar</button>
+        </div> -->
 
     </div>
 
+    <div class="sobre-mim">
+
+    </div>
+
+    <footer>
+
+        
+    </footer>
+
+
+    <script src="carrossel2.js"></script>
 </body>
 
 </html>
 <script>
-    function selecionarCasa(){
-        var respostas = document.forms['quiz'].elements;
-        var casa = "";
-        
-        if(casa == ""){
-            div_resultado.innerHTML = ``
+    // carrossel inico
+    var container = [
+        '/site/src/casas.png',
+        '/site/src/lufalufa.png',
+        '/site/src/grifinoria.png',
+        '/site/src/corvinal.png',
+        '/site/src/sonserina.png'
+    ];
+
+    var i = 0;
+
+    meuContainer.innerHTML = container[i];
+
+    function avançar() {
+        i = (i + 1) % container.length;
+        atualizarPosicao();
+    }
+
+    function retroceder() {
+        i = (i - 1) % container.length;
+        atualizarPosicao();
+    }
+
+    function atualizarPosicao() {
+        // meuContainer.innerHTML = container[i];
+        var item = container[i];
+
+        if (item.startsWith('/site/src/')) {
+            // Se o item começar com 'login/src/', é considerado um caminho de imagem
+            meuContainer.innerHTML = `<img src="${item}" alt="Imagem" style="width:80%;">`;
         }
     }
-        
 
-//   function sortUser() {
-//   const answers = document.forms['sorting-hat-quiz'].elements;
-//   let house = '';
 
-//   for (let i = 0; i < answers.length; i++) {
-//     if (answers[i].checked) {
-//       if (answers[i].value === 'coragem') {
-//         house = 'Grifinória';
-//       } else if (answers[i].value === 'inteligência') {
-//         house = 'Corvinal';
-//       }
-//       // Adicione mais lógica para outras casas e perguntas aqui
-//       break; // Saia do loop após encontrar a primeira resposta
-//     }
-//   }
+    // Adiciona a funcionalidade de carrossel automático
+    var intervalo = setInterval(function () {
+        avançar();
+    }, 5000); // Troca automaticamente a cada 2 segundos
 
-//   if (house !== '') {
-//     document.getElementById('result').textContent = `Sua casa é: ${house}`;
-//   } else {
-//     document.getElementById('result').textContent = 'Por favor, responda todas as perguntas.';
-//   }
-// }
+    // Pára a troca automática quando o mouse entra no contêiner
+    meuContainer.addEventListener('mouseenter', function () {
+        clearInterval(intervalo);
+    });
 
+    // Retoma a troca automática quando o mouse sai do contêiner
+    meuContainer.addEventListener('mouseleave', function () {
+        intervalo = setInterval(function () {
+            avançar();
+        }, 5000);
+    });
+    // carrossel fim
+
+    // carrossel2 inico
     
+    // carrossel fim
 </script>

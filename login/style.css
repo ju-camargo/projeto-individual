@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=League+Spartan&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=League+Spartan&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Cardo&display=swap');
 
 * {
     padding: 0;
@@ -11,7 +12,8 @@ body {
     padding: 0;
     height: 100vh;
     width: 99vw;
-    font-family: 'League Spartan', sans-serif;
+    /* font-family: 'League Spartan', sans-serif; */
+    font-family: 'Cardo', serif;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -138,7 +140,8 @@ input {
     /* color: beige; */
     height: 25px;
     /* padding: 5px; */
-    font-family: 'League Spartan', sans-serif;
+    /* font-family: 'League Spartan', sans-serif; */
+    font-family: 'Cardo', serif;
 }
 
 #btn-form {
@@ -149,7 +152,8 @@ input {
     cursor: pointer;
     width: 30%;
     height: 15%;
-    font-family: 'League Spartan', sans-serif;
+    /* font-family: 'League Spartan', sans-serif; */
+    font-family: 'Cardo', serif;
 }
 
 #btn-mudar {
@@ -163,7 +167,8 @@ input {
     cursor: pointer;
     font-weight: bold;
     font-size: 15px;
-    font-family: 'League Spartan', sans-serif;
+    /* font-family: 'League Spartan', sans-serif; */
+    font-family: 'Cardo', serif;
 }
 
 a {

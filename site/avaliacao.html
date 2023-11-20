@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="quiz.css">
+    <link rel="stylesheet" href="avaliacao.css">
 </head>
 
 <body>
@@ -25,16 +25,18 @@
         <div class="box-maior">
             <div class="inner-box">
                 <div class="div_esquerda">
-                    <!-- quiz -->
+                    <!-- avaliacao -->
                     <p>info filme</p> <br>
 
                     <input type="text" id="inp_avaliacao" placeholder="Descrição"> <br>
 
-                    <button onkeyup="avaliar()">Avaliar</button> 
-                    <button onclick="desfazer()">Desfazer</button>
+                    <div class="div_btns">
+                        <button onclick="avaliar()">Avaliar</button>
+                        <button onclick="desfazer()">Desfazer</button>
+                    </div>
 
                     <div id="div_avaliacao"></div>
-                    
+
                 </div>
 
                 <div class="div_direita">
@@ -50,14 +52,14 @@
 
     </html>
     <script>
-        function avaliar(){
+        function avaliar() {
             var avaliacao = inp_avaliacao.value;
 
             div_avaliacao.innerHTML += `${avaliacao}`
 
         }
 
-        function desfazer(){
+        function desfazer() {
             div_avaliacao.innerHTML = "";
         }
     </script>
