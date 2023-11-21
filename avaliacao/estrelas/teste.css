@@ -1,0 +1,13 @@
+.apagada {
+    background-image: url('http://www.biblecast.net.br/resources/estrela-prata.png');
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+  }
+  
+  .destaque {
+    background-image: url('http://imobiliariacincoestrelas.com.br/images/estrela.png');
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+  }

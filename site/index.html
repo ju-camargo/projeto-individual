@@ -57,48 +57,28 @@
                 e lutam contra o bruxo Lord Voldemort.</p>
         </div>
 
-        <div class="catalogo">
-            <!-- carrossel -->
-            <div class="carrossel2" id="meuContainer2"></div>
-
-            <!-- <div class="cima">
-                <div class="card">
-                    <p>Harry Potter e a Pedra Filosofal</p>
-                    <img src="/site/src/pedra-filosofal.jpg" alt="" style="width: 60%;"> <br>
-                    <button id="btn-filme">Ver filme</button>
-                </div>
-
-                <div class="card">
-                    <p>Filme</p>
-                    [img filme]
-                    <button>Ver filme</button>
-                </div>
-
-                <div class="card">
-                    <p>Filme</p>
-                    [img filme]
-                    <button>Ver filme</button>
-                </div>
-            </div> -->
-
-            <div class="avaliacao">
-                <!-- <img src="/site/src/plat.png" alt="plataforma" style="width: 10%;"> -->
-
-                <p>Avalie os filmes de Harry Potter em até <br>
-                    5 estrelas, e deixe um review se desejar!
-                </p>
-
-                <button id="btn-avaliar">Avaliar</button>
-
-            </div>
-        </div>
-
     </div>
 
     <!-- filmes -->
-    <!-- <div class="filmes"> -->
-    <!-- carrossel -->
-    <!-- </div> -->
+    <div class="filmes">
+
+        <div class="avaliacao">
+            <img src="/site/src/plat.png" alt="plataforma" style="width: 25%;">
+
+            <p>Avalie os filmes de Harry Potter em até <br>
+                5 estrelas, e deixe um review se desejar!
+            </p>
+
+            <button id="btn-avaliar">Avaliar</button>
+        </div>
+
+        <div class="catalogo">
+            <p>Filmes:</p>
+
+            <div class="carrossel2" id="meuContainer2"></div>
+        </div>
+
+    </div>
 
     <!-- chapéu seletor -->
     <div class="chapeu-filmes" id="chapeu">
@@ -134,74 +114,20 @@
 
     </div>
 
+    <!-- sobre mim -->
     <div class="sobre-mim">
 
     </div>
 
     <footer>
 
-        
+
     </footer>
 
 
-    <script src="carrossel2.js"></script>
 </body>
 
 </html>
-<script>
-    // carrossel inico
-    var container = [
-        '/site/src/casas.png',
-        '/site/src/lufalufa.png',
-        '/site/src/grifinoria.png',
-        '/site/src/corvinal.png',
-        '/site/src/sonserina.png'
-    ];
 
-    var i = 0;
-
-    meuContainer.innerHTML = container[i];
-
-    function avançar() {
-        i = (i + 1) % container.length;
-        atualizarPosicao();
-    }
-
-    function retroceder() {
-        i = (i - 1) % container.length;
-        atualizarPosicao();
-    }
-
-    function atualizarPosicao() {
-        // meuContainer.innerHTML = container[i];
-        var item = container[i];
-
-        if (item.startsWith('/site/src/')) {
-            // Se o item começar com 'login/src/', é considerado um caminho de imagem
-            meuContainer.innerHTML = `<img src="${item}" alt="Imagem" style="width:80%;">`;
-        }
-    }
-
-
-    // Adiciona a funcionalidade de carrossel automático
-    var intervalo = setInterval(function () {
-        avançar();
-    }, 5000); // Troca automaticamente a cada 2 segundos
-
-    // Pára a troca automática quando o mouse entra no contêiner
-    meuContainer.addEventListener('mouseenter', function () {
-        clearInterval(intervalo);
-    });
-
-    // Retoma a troca automática quando o mouse sai do contêiner
-    meuContainer.addEventListener('mouseleave', function () {
-        intervalo = setInterval(function () {
-            avançar();
-        }, 5000);
-    });
-    // carrossel fim
-
-    // carrossel2 inico
-    
-    // carrossel fim
-</script>
+<script src="carrossel-filmes.js"></script>
+<script src="carrossel-casas.js"></script>

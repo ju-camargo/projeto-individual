@@ -1,0 +1,221 @@
+/* @import url('https://fonts.googleapis.com/css2?family=League+Spartan&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Cardo&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 99vw;
+    /* font-family: 'League Spartan', sans-serif; */
+    font-family: 'Cardo', serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-maior {
+    display: flex;
+    /* justify-content: center; */
+    /* justify-content: flex-end; */
+    flex-direction: row-reverse;
+    align-items: center;
+    /* margin-right: 10%; */
+
+    /* width: 60%; */
+    height: 90%;
+    width: 80%;
+    /* margin: auto; */
+    /* background-color: #2f231c; */
+    background-color: #463931;
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+}
+
+.box-maior .inner-box {
+    display: flex;
+    /* justify-content: flex-start; */
+    align-items: center;
+    height: 92%;
+    width: 98%;
+    background-color: #463931;
+    border-radius: 15px;
+}
+
+.box-maior .inner-box .div_esquerda {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* justify-content: flex-start; */
+    /* justify-content: center; */
+    align-items: center;
+    height: 500px;
+    width: 20%;
+    background-color: #463931;
+    border-radius: 30px;
+    gap: 30px;
+}
+
+.box-maior .inner-box .div_esquerda .perfil {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* justify-content: flex-end; */
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    margin-top: 15px;
+    /* background-color: #2f231c; */
+    /* border: 1px #2f231c solid; */
+    /* width: 100%; */
+    /* width: 30%; */
+}
+
+.linha {
+    /* display: flex;  */
+    /* justify-content: center;  */
+    border: 1px #2f231c solid; 
+    width: 80%;
+}
+
+.box-maior .inner-box .div_esquerda .menu {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    gap: 20px;
+    align-items: center;
+    /* justify-content: space-between; */
+    list-style: none;
+    width: 100%;
+    height: 90%;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.div_saida {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+
+.div_direita {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-end; */
+    /* justify-content: center; */
+    align-items: center;
+    height: 525px;
+    width: 80%;
+    margin-right: 8px;
+    border-radius: 30px;
+    background-color: beige;
+    gap: 30px;
+    /* color: beige; */
+}
+
+.div_direita .div_home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+}
+
+.div_direita .div_home .div_hello {
+    /* margin-top: 3%; */
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 20%;
+    gap: 5px;
+    border-radius: 15px;
+    /* background-color: rgba(59, 43, 36, 0.2); */
+    /* background-color: #594336; */
+    /* color: #2f231c; */
+}
+
+.div_direita .div_home .div_info {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-between;
+    /* background-color: azure; */
+    width: 90%;
+    height: 50%;
+    border-radius: 15px;
+    gap: 20px;
+}
+
+.div_direita .div_home .div_info .div_casa {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    height: 100%;
+    border-radius: 15px;
+    gap: 25px;
+    /* background-color: #594336; */
+    /* border: 1px #2f231c solid; */
+    /* background-color: rgba(59, 43, 36, 0.2); */
+    background-color: #7F6859;
+    /* background-color: rgba(59, 43, 36, 0.5);
+    color: #FFF; */
+    /* background-color: #FFF; */
+}
+
+.div_direita .div_home .div_info .div_casa .div_resultado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 15%;
+    border-radius: 5px;
+    background-color: #396c2e;
+
+}
+
+.div_direita .div_home .div_info .div_filmes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 100%;
+    border-radius: 15px;
+    gap: 25px;
+    /* background-color: #7F6859; */
+    background-color: rgba(59, 43, 36, 0.2);
+    /* border-color: #594336; */
+    /* background-color: #FFF; */
+    /* background-color: #594336; */
+    background-color: #7F6859;
+    /* border: 1px #2f231c solid; */
+    /* color: #FFF; */
+}
+
+
+
+
+/* 463931 claro */
+/* 2f231c escuro */
+
+/* cores para casas:
+lufa-lufa: #fbec5d
+grifinoria: #9c1111
+corvinal: #0a497b
+sonserina: #396c2e*/

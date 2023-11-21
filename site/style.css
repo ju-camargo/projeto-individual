@@ -2,10 +2,10 @@
 
 /* @import url('https://fonts.googleapis.com/css2?family=League+Spartan&family=Playfair+Display:ital@1&display=swap');7 */
 
-  /* @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300&family=League+Spartan&family=Playfair+Display:ital@1&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300&family=League+Spartan&family=Playfair+Display:ital@1&display=swap'); */
 
- 
- @import url('https://fonts.googleapis.com/css2?family=Cardo&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Cardo&display=swap');
 
 
 
@@ -17,151 +17,121 @@
 
 
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Cardo', serif;
-    /* font-family: 'League Spartan', sans-serif; */
-    /* font-family: 'Playfair Display', serif; */
-    /* font-family: 'DM Sans', sans-serif; */
+  margin: 0;
+  padding: 0;
+  font-family: 'Cardo', serif;
+  /* font-family: 'League Spartan', sans-serif; */
+  /* font-family: 'Playfair Display', serif; */
+  /* font-family: 'DM Sans', sans-serif; */
 }
 
 .header {
-    background-color: #463931;
-    height: 80px;
-    /* color: #2f231c; */
-    /* color: beige; */
+  background-color: #463931;
+  height: 80px;
+  /* color: #2f231c; */
+  /* color: beige; */
 }
 
 .container {
-    display: flex;
-    /* justify-content: space-between; */
-    width: 70%;
-    margin: auto;
-    /* margin-left: 10%;
+  display: flex;
+  /* justify-content: space-between; */
+  width: 70%;
+  margin: auto;
+  /* margin-left: 10%;
     margin-right: 10%; */
 }
 
 .header .container {
   display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-  }
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
 
-  .navbar {
-    width: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    list-style: none;
-    cursor: pointer;
-    /* color: #f2f2f2; */
-  }
+.navbar {
+  width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+  cursor: pointer;
+  /* color: #f2f2f2; */
+}
 
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-  .titulo {
-    width: fit-content;
-    font-weight: 500;
-  }
+.titulo {
+  width: fit-content;
+  font-weight: 500;
+}
 
- 
+
 
 
 /* banner (tem q ver ainda) */
-  .banner {
-    /* height: calc(100vh - 80px - 65px - 2px); */
-    
-      
-      background-image: url('/site/src/4k-hp2-movie-screencaps.com-114.png'); 
-      /* background-color: rgba(0, 0, 0, 0.5);    */
-      background-size: cover;
-      height: 520px;
+.banner {
+  /* height: calc(100vh - 80px - 65px - 2px); */
 
-  }
 
-  .banner .container-banner {
-    display: flex;
-    justify-content: space-between;
-    margin-left: 10%;
-    align-items: center;
-    height: 100%;
-  }
- 
+  background-image: url('/site/src/4k-hp2-movie-screencaps.com-114.png');
+  /* background-color: rgba(0, 0, 0, 0.5);    */
+  background-size: cover;
+  height: 520px;
 
-  .banner .container-banner p {
-    font-size: 36px;
-    color: white;
-    font-family: 'Playfair Display', serif;
-    /* width: 280px; */
+}
 
-  }
-  
-  /* .banner .container span {
+.banner .container-banner {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 10%;
+  align-items: center;
+  height: 100%;
+}
+
+
+.banner .container-banner p {
+  font-size: 36px;
+  color: white;
+  font-family: 'Playfair Display', serif;
+  /* width: 280px; */
+
+}
+
+/* .banner .container span {
     font-weight: 800;
   } */
 
-  .filmes{
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-    width: 100%;
-    height: 80vh;
-    background-color: #f2f2f2;
-  }
+.filmes {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  width: 100%;
+  height: 80vh;
+  background-color: #f2f2f2;
+}
 
-  .sobre {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 40%;
-    background-color: #f2f2f2;
-  }
-
-  .catalogo {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    /* justify-content: center; */
-    align-items: center;
-    width: 60%; 
-    height: 90%; 
-    background-color: #463931;
-    border-radius: 15px;
-   }
-
-   .carrossel2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* width: 80%; */
-    background-color: #f2f2f2;
-   }
-
-  .avaliacao {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* justify-content: center; */
-    background-color: #2f231c;
-    /* gap: 30px; */
-    width: 40%;
-    height: 25%;
-  }
+.sobre {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  background-color: #f2f2f2;
+}
 
 
-  /* .cima {
+
+/* .cima {
     display: flex; */
-    /* justify-content: space-around; */
-    /* gap: 20px;
+/* justify-content: space-around; */
+/* gap: 20px;
     width: 90%;
     height: 80%; */
-    /* background-color: #463931; */
-  /* }
+/* background-color: #463931; */
+/* }
 
   .card {
     display: flex;
@@ -171,78 +141,132 @@ body {
     width: 35%;
     height: 70%;
     background-color: #2f231c; */
-    /* background-color: #463931; */
-  /* }
+/* background-color: #463931; */
+/* }
 
   #btn-filme {
     background-color: #f2f2f2;
     /* color: #; */
-    /* border: none;
+/* border: none;
     border-radius: 5px;
     cursor: pointer;
     width: 70px;
     height: 10%;  */
-    /* font-family: 'League Spartan', sans-serif; */
-    /* font-family: 'Cardo', serif;
+/* font-family: 'League Spartan', sans-serif; */
+/* font-family: 'Cardo', serif;
   } */
 
-  .chapeu-filmes {
-    /* background-image: url(/site/src/rony-chapeu.jpg);
+.filmes {
+  display: flex;
+  width: 100%;
+  height: 80vh;
+  background-color: #f2f2f2;
+}
+
+.avaliacao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* align-items: center; */
+  justify-content: center;
+  /* background-color: red; */
+  /* gap: 30px; */
+  width: 50%;
+  height: 90%;
+  border-radius: 15px;
+}
+
+.catalogo {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-around; */
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 90%;
+  /* background-color: #463931; */
+  background-color: #463931;
+  border-radius: 15px;
+}
+
+
+#btn-avaliar {
+  background-color: #2f231c;
+  color: #f2f2f2;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 20%;
+  height: 10%;
+   /* font-family: 'League Spartan', sans-serif;  */
+ font-family: 'Cardo', serif;
+} 
+
+.carrossel2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* width: 80%; */
+  background-color: #f2f2f2;
+}
+
+.chapeu-filmes {
+  /* background-image: url(/site/src/rony-chapeu.jpg);
     background-size: cover; */
-    display: flex;
-    /* flex-direction: column; */
-    /* align-items: center;
+  display: flex;
+  /* flex-direction: column; */
+  /* align-items: center;
     justify-content: space-around; */
-    width: 100%;
-    height: 80vh;
-    background-color: #f2f2f2;
-    border-radius: 15px;
-    /* background-color: #463931; */
-  }
+  width: 100%;
+  height: 80vh;
+  background-color: #f2f2f2;
+  border-radius: 15px;
+  /* background-color: #463931; */
+}
 
-  .casas {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width:50%; 
-    height: 100%;
-    background-color: #2f231c;
-    border-radius: 15px;
-    color: #f2f2f2;
-  }
+.casas {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  background-color: #2f231c;
+  border-radius: 15px;
+  color: #f2f2f2;
+}
 
-  .carrossel {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.carrossel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-   .chapeu-quiz {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width:50%; 
-    height: 100%;
-    /* border-radius: 10px; */
-    /* background-color: #2f231c; */
-    background-color: #f2f2f2;
-  }
+.chapeu-quiz {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  /* border-radius: 10px; */
+  /* background-color: #2f231c; */
+  background-color: #f2f2f2;
+}
 
-  #btn-chapeu {
-    background-color: #2f231c;
-    color: #f2f2f2;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 20%;
-    height: 10%;
-    /* font-family: 'League Spartan', sans-serif; */
-    font-family: 'Cardo', serif;
-  }
+#btn-chapeu {
+  background-color: #2f231c;
+  color: #f2f2f2;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 20%;
+  height: 10%;
+  /* font-family: 'League Spartan', sans-serif; */
+  font-family: 'Cardo', serif;
+}
 
-  /* .filmes {
+/* .filmes {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -262,16 +286,16 @@ body {
     width: 20%;
     height: 10%;
     /* font-family: 'League Spartan', sans-serif; */
-    /* font-family: 'Cardo', serif;
+/* font-family: 'Cardo', serif;
   } */
 
-  .sobre-mim {
-    display: flex;
-    width: 100%;
-    height: 80vh;
-  }
+.sobre-mim {
+  display: flex;
+  width: 100%;
+  height: 80vh;
+}
 
-  footer {
-    background-color: #463931;
-    height: 120px;
-  }
+footer {
+  background-color: #463931;
+  height: 120px;
+}

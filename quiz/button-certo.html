@@ -120,8 +120,8 @@
 
                     <div id="div_final" style="display: none;">
 
-                        <button type="button" id="btn-quiz" onclick="selecionarCasa()">Selecionar Casa</button> <br><br>
-                        <button id="btn-quiz" onclick="reiniciar()">Reiniciar</button>
+                        <button type="button" id="btn-quiz" onclick="selecionarCasa()">Ver Resultado</button> <br><br>
+                        <!-- <button id="btn-quiz" onclick="reiniciar()">Reiniciar</button> -->
 
                     </div>
 
@@ -195,27 +195,27 @@
     function selecionarCasa() {
         var casa = "";
 
-        pontosGrif = 0;
-        pontosCorv = 0;
-        pontosLufa = 0;
-        pontosSons = 0;
+        pontosGrifinoria = 0;
+        pontosCorvinal = 0;
+        pontosLufaLufa = 0;
+        pontosSonserina = 0;
 
         for (var i = 0; i < respostas.length; i++) {
             if (respostas[i] == 'grifinoria') {
-                pontosGrif += 3;
+                pontosGrifinoria += 3;
             }
             else if (respostas[i] == 'corvinal') {
-                pontosCorv += 3;
+                pontosCorvinal += 3;
             }
             else if (respostas[i] == 'lufalufa') {
-                pontosLufa += 3;
+                pontosLufaLufa += 3;
             }
             else if (respostas[i] == 'sonserina') {
-                pontosSons += 3;
+                pontosSonserina += 3;
             }
         }
 
-        if (pontosGrif > pontosCorv && pontosGrif > pontosLufa) {
+        if (pontosGrifinoria > pontosCorvinal && pontosGrifinoria > pontosLufaLufa) {
             casa = `Grifinória`
         }
         else {
