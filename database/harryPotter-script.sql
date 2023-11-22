@@ -5,24 +5,12 @@ create table casa (
     nome varchar(45)
 );
 
-create table varinha (
-	idVarinha int primary key auto_increment,
-    descricao varchar(45),
-    fkUsuario int
-);
-
 create table usuario (
 	idUsuario int primary key auto_increment,
     nome varchar(45),
     cpf varchar(11),
     email varchar(45),
-    senha varchar(45),
-    fkCasa int,
-    constraint fkcasa foreign key (fkCasa)
-		references casa (idCasa),
-	fkVarinha int,
-    constraint fkVarinha foreign key (fkVarinha)
-		references varinha (idVarinha)
+    senha varchar(45)
 );
 
 create table avaliacao (
@@ -41,3 +29,6 @@ create table filme (
     nome varchar(45),
     dtLancamento date
 );
+
+insert into filme values
+	(null, 'Harry Potter e a Pedra Filosofal', '');

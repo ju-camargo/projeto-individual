@@ -9,75 +9,64 @@
 </head>
 
 <body>
-    <!DOCTYPE html>
-    <html lang="pt-br">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Cadastro</title>
+    <div class="box-maior">
+        <div class="inner-box">
+            <div class="div_esquerda">
+                <!-- avaliacao -->
+                <p>info filme</p> <br>
 
-        <link rel="stylesheet" href="style.css">
-    </head>
-
-    <body>
-
-        <div class="box-maior">
-            <div class="inner-box">
-                <div class="div_esquerda">
-                    <!-- avaliacao -->
-                    <p>info filme</p> <br>
-
-                    <div  class="estrelas" style="display: flex;">
-                        <div id="es1" onclick="e1()">
-                            <img src="estrelas.jpg" style="width: 50px;">
-                        </div>
-                        <div id="es2" onclick="e2()">
-                            <img src="estrelas.jpg" style="width: 50px;">
-                        </div>
-                        <div id="es3" onclick="e3()">
-                            <img src="estrelas.jpg" style="width: 50px;">
-                        </div>
-                        <div id="es4" onclick="e4()">
-                            <img src="estrelas.jpg" style="width: 50px;">
-                        </div>
-                        <div id="es5" onclick="e5()">
-                            <img src="estrelas.jpg" style="width: 50px;">
-                        </div>
+                <div class="estrelas-avaliar" style="display: flex; cursor: pointer;">
+                    <div id="es1" onclick="e1()">
+                        <img src="/avaliacao/estrelas/estrelas.jpg" style="width: 30px;">
                     </div>
-
-                    <input type="text" id="inp_avaliacao" placeholder="Descrição"> <br>
-
-                    <div class="div_btns">
-                        <button onclick="avaliar()">Avaliar</button>
-                        <button onclick="desfazer()">Desfazer</button>
+                    <div id="es2" onclick="e2()">
+                        <img src="/avaliacao/estrelas/estrelas.jpg" style="width: 30px;">
                     </div>
-
-                    <div id="div_avaliacao"></div>
-
+                    <div id="es3" onclick="e3()">
+                        <img src="/avaliacao/estrelas/estrelas.jpg" style="width: 30px;">
+                    </div>
+                    <div id="es4" onclick="e4()">
+                        <img src="/avaliacao/estrelas/estrelas.jpg" style="width: 30px;">
+                    </div>
+                    <div id="es5" onclick="e5()">
+                        <img src="/avaliacao/estrelas/estrelas.jpg" style="width: 30px;">
+                    </div>
                 </div>
 
-                <div class="div_direita">
-                    <p>Com base em suas avaliações, seus <br>
-                        3 primeiros filmes favoritos são:</p>
+                <input type="text" id="inp_avaliacao" placeholder="Descrição"> <br>
 
+                <div class="div_btns">
+                    <button id="btns" onclick="avaliar()">Avaliar</button>
+                    <button id="btns" onclick="desfazer()">Desfazer</button>
                 </div>
+
+                <div id="div_avaliacao"></div>
 
             </div>
+
+            <div class="div_direita">
+                <p>Com base em suas avaliações, seus <br>
+                    3 primeiros filmes favoritos são:</p>
+
+            </div>
+
         </div>
+    </div>
 
-    </body>
+</body>
 
-    </html>
-    <script>
-        function avaliar() {
-            var avaliacao = inp_avaliacao.value;
+</html>
+<script src="estrelas/estrelas.js"></script>
+<script>
+    function avaliar() {
+        var avaliacao = inp_avaliacao.value;
 
-            div_avaliacao.innerHTML += `${avaliacao}`
+        div_avaliacao.innerHTML += `${avaliacao}`
 
-        }
+    }
 
-        function desfazer() {
-            div_avaliacao.innerHTML = "";
-        }
-    </script>
+    function desfazer() {
+        div_avaliacao.innerHTML = "";
+    }
+</script>
