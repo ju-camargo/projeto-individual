@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avaliação | Filmes</title>
-    <link rel="stylesheet" href="avaliacao copy.css">
+    <link rel="stylesheet" href="/css/style-avaliacao.css">
 </head>
 
 <body>
@@ -29,25 +29,25 @@
                     <!-- avaliacao -->
                     <b>Harry Potter e a Pedra Filosofal (2001)</b> 
                     <div class="info-filme">
-                        <img src="./filmes/pedra-filosofal.jpg" alt="pedrafilosofal" style="width: 20%;"> <br>
+                        <img src="/assets/avaliacao/filmes/pedra-filosofal.jpg" alt="pedrafilosofal" style="width: 20%;"> <br>
                         <!-- <p>info</p> <br> -->
                     </div>
 
                     <div class="estrelas-avaliar" style="display: flex; cursor: pointer;">
                         <div id="es1" onclick="e1()">
-                            <img src="/avaliacao/estrelas/estrelas.jpg" style="width: 30px;">
+                            <img src="/assets/avaliacao/estrelas/estrelas.jpg" style="width: 30px;">
                         </div>
                         <div id="es2" onclick="e2()">
-                            <img src="/avaliacao/estrelas/estrelas.jpg" style="width: 30px;">
+                            <img src="/assets/avaliacao/estrelas/estrelas.jpg" style="width: 30px;">
                         </div>
                         <div id="es3" onclick="e3()">
-                            <img src="/avaliacao/estrelas/estrelas.jpg" style="width: 30px;">
+                            <img src="/assets/avaliacao/estrelas/estrelas.jpg" style="width: 30px;">
                         </div>
                         <div id="es4" onclick="e4()">
-                            <img src="/avaliacao/estrelas/estrelas.jpg" style="width: 30px;">
+                            <img src="/assets/avaliacao/estrelas/estrelas.jpg" style="width: 30px;">
                         </div>
                         <div id="es5" onclick="e5()">
-                            <img src="/avaliacao/estrelas/estrelas.jpg" style="width: 30px;">
+                            <img src="/assets/avaliacao/estrelas/estrelas.jpg" style="width: 30px;">
                         </div>
                     </div>
 
@@ -73,21 +73,21 @@
 </body>
 
 </html>
-<script src="estrelas/estrelas.js"></script>
+<script src="/js/estrelas-avaliacao.js"></script>
 <script>
     function exibirFilme1() {
         div_filmes.innerHTML = "";
         div_avaliacao.style.display = 'block';
     }
 
-    function avaliar() {
-        var avaliacao = inp_avaliacao.value;
+    // function avaliar() {
+    //     var avaliacao = inp_avaliacao.value;
 
-        div_avaliacao.innerHTML += `${avaliacao}`
+    //     div_avaliacao.innerHTML += `${avaliacao}`
 
-    }
+    // }
 
-    function desfazer() {
-        div_avaliacao.innerHTML = "";
-    }
+    // function desfazer() {
+    //     div_avaliacao.innerHTML = "";
+    // }
 </script>

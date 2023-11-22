@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style-login-cadastro.css">
 </head>
 
 <body>
@@ -43,56 +43,8 @@
 </body>
 
 </html>
+<script src="./js/carrossel-login-cadastro.js"></script>
 <script>
-
-    // carrossel inico
-    var container = [
-        '/login/src/chapeu.png',
-        '/login/src/plat.png'
-    ];
-
-    var i = 0;
-
-    meuContainer.innerHTML = container[i];
-
-    function avançar() {
-        i = (i + 1) % container.length;
-        atualizarPosicao();
-    }
-
-    function retroceder() {
-        i = (i - 1) % container.length;
-        atualizarPosicao();
-    }
-
-    function atualizarPosicao() {
-        // meuContainer.innerHTML = container[i];
-        var item = container[i];
-
-        if (item.startsWith('/login/src/')) {
-            // Se o item começar com 'login/src/', é considerado um caminho de imagem
-            meuContainer.innerHTML = `<img src="${item}" alt="Imagem">`;
-        }
-    }
-
-
-    // Adiciona a funcionalidade de carrossel automático
-    var intervalo = setInterval(function () {
-        avançar();
-    }, 2000); // Troca automaticamente a cada 2 segundos
-
-    // Pára a troca automática quando o mouse entra no contêiner
-    meuContainer.addEventListener('mouseenter', function () {
-        clearInterval(intervalo);
-    });
-
-    // Retoma a troca automática quando o mouse sai do contêiner
-    meuContainer.addEventListener('mouseleave', function () {
-        intervalo = setInterval(function () {
-            avançar();
-        }, 5000);
-    });
-    // carrossel fim
 
 
     // function mudarLogin() {

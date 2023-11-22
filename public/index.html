@@ -7,7 +7,7 @@
 
     <title>Harry Potter | Tela inicial</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style-home.css">
 </head>
 
 <body>
@@ -18,20 +18,26 @@
             <!-- <h2 class="titulo">Harry Potter</h2> -->
 
             <ul class="navbar">
-                <li>Sobre</li>
-                <li>Filmes</li>
+                <li>
+                    <a href="#sobre">Sobre</a>
+                </li>
+
+                <li>
+                    <a href="#filmes">Filmes</a>
+                </li>
+
                 <li>
                     <a href="#chapeu">Chapéu seletor</a>
                 </li>
             </ul>
 
-            <img src="/site/src/logo-branca.png" alt="" width="250px;">
+            <img src="./assets/home/logo-branca.png" alt="" width="250px;">
 
             <ul class="navbar">
                 <li>Sobre mim</li>
                 <li>Valores</li>
                 <li>
-                    <a href="">Login</a>
+                    <a href="/login.html">Login</a>
                 </li>
             </ul>
         </div>
@@ -46,7 +52,7 @@
     </div>
 
     <!-- sobre -->
-    <div class="filmes">
+    <div class="filmes" id="sobre">
 
         <div class="sobre">
             <h4>Sobre</h4>
@@ -60,16 +66,16 @@
     </div>
 
     <!-- filmes -->
-    <div class="filmes">
+    <div class="filmes" id="filmes">
 
         <div class="avaliacao">
-            <img src="/site/src/plat.png" alt="plataforma" style="width: 25%;">
+            <img src="./assets/home/plat.png" alt="plataforma" style="width: 25%;">
 
             <p>Avalie os filmes de Harry Potter em até <br>
                 5 estrelas, e deixe um review se desejar!
             </p>
 
-            <button id="btn-avaliar">Avaliar</button>
+            <button id="btn-avaliar"><a href="login.html">Avaliar</a></button>
         </div>
 
         <div class="catalogo">
@@ -91,14 +97,14 @@
 
         <div class="chapeu-quiz">
 
-            <img src="/site/src/chapeu.png" alt="chapeu-seletor" style="width: 40%;"> <br>
+            <img src="./assets/home/chapeu.png" alt="chapeu-seletor" style="width: 40%;"> <br>
 
             <p>Veja qual é a sua casa em Hogwarts! <br>
                 Responda a um quiz e deixe o chapéu seletor <br>
                 determinar a qual casa você pertence.
             </p>
 
-            <button id="btn-chapeu">Login</button>
+            <button id="btn-chapeu"><a href="/login.html">Login</a></button>
 
         </div>
 
@@ -123,11 +129,9 @@
 
 
     </footer>
-
-
 </body>
 
 </html>
 
-<script src="carrossel-filmes.js"></script>
-<script src="carrossel-casas.js"></script>
+<script src="/js/carrossel-filmes.js"></script>
+<script src="/js/carrossel-casas.js"></script>

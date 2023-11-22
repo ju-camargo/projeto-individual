@@ -1,6 +1,6 @@
 var container = [
-    'chapeu seletor',
-    'avaliar filmes'
+    './assets/login-cadastro/chapeu.png',
+    './assets/login-cadastro/plat.png'
 ];
 
 var i = 0;
@@ -18,9 +18,14 @@ function retroceder() {
 }
 
 function atualizarPosicao() {
-    meuContainer.innerHTML = container[i];
-}
+    // meuContainer.innerHTML = container[i];
+    var item = container[i];
 
+    if (item.startsWith('./assets/')) {
+        // Se o item começar com 'login/src/', é considerado um caminho de imagem
+        meuContainer.innerHTML = `<img src="${item}" alt="Imagem">`;
+    }
+}
 
 
 // Adiciona a funcionalidade de carrossel automático
@@ -37,5 +42,5 @@ meuContainer.addEventListener('mouseenter', function () {
 meuContainer.addEventListener('mouseleave', function () {
     intervalo = setInterval(function () {
         avançar();
-    }, 2000);
+    }, 5000);
 });
