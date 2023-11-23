@@ -1,6 +1,12 @@
 var filmes = [
-    '/site/src/pedra-filosofal.jpg',
-    '/site/src/camera-secreta.jpg'
+    './assets/home/filmes/1.png',
+    './assets/home/filmes/2.png',
+    './assets/home/filmes/3.png',
+    './assets/home/filmes/4.png',
+    './assets/home/filmes/5.png',
+    './assets/home/filmes/6.png',
+    './assets/home/filmes/7.png',
+    './assets/home/filmes/8.png',
 ];
 
 var c = 0;
@@ -21,9 +27,9 @@ function atualizarFilme() {
     // meuContainer.innerHTML = filmes[i];
     var item = filmes[c];
 
-    if (item.startsWith('/site/src/')) {
+    if (item.startsWith('./assets/home/')) {
         // Se o item começar com 'login/src/', é considerado um caminho de imagem
-        meuContainer2.innerHTML = `<img src="${item}" alt="Imagem" style="width:20%;">`;
+        meuContainer2.innerHTML = `<img src="${item}" alt="Imagem" style="width: 90%;">`;
     }
 }
 

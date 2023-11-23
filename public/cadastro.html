@@ -33,13 +33,13 @@
                         <div class="campo" maxlength="18">
                             <!-- <span>CPF:</span> -->
                             <input id="inp_cpf" type="number" placeholder="CPF">
-                            <span class="span-required" id="span_cpf">O CPF deve ter 11 dígitos</Span>
+                            <!-- <span class="span-required" id="span_cpf">O CPF deve ter 11 dígitos</Span> -->
                         </div>
 
                         <div class="campo">
                             <!-- <span>Email:</span> -->
                             <input id="inp_email" type="text" placeholder="Email">
-                            <span class="span-required">Digite um email válido</span>
+                            <!-- <span class="span-required">Digite um email válido</span> -->
                         </div>
 
                         <div class="campo">
@@ -50,7 +50,7 @@
 
                         <div class="campo">
                             <!-- <span>Confirmação da Senha:</span> -->
-                            <input id="confirmacao_senha_input" type="password" placeholder="Confirmação de senha" />
+                            <input id="inp_conf_senha" type="password" placeholder="Confirmação de senha">
                             <!-- <span class="span-required">Digite um email válido</span> -->
                         </div>
 
@@ -72,33 +72,55 @@
 <script>
 
 
-    var campos = document.querySelectorAll('.campo');
-    var spans = document.querySelectorAll('.span-required');
+    // var campos = document.querySelectorAll('.campo');
+    // var spans = document.querySelectorAll('.span-required');
 
-    function erro(index) {
-        campos[index].style.border = '2px solid #e63636';
-        spans[index].style.display = 'block';
-    }
+    // function erro(index) {
+    //     campos[index].style.border = '2px solid #e63636';
+    //     spans[index].style.display = 'block';
+    // }
 
-    function removerErro(index) {
-        campos[index].style.border = 'none';
-        spans[index].style.display = 'none';
-    }
+    // function removerErro(index) {
+    //     campos[index].style.border = 'none';
+    //     spans[index].style.display = 'none';
+    // }
 
     function cadastrar() {
-        var cpf = Number(inp_cpf.value);
+        // var cpf = Number(inp_cpf.value);
         // var span_cpf = span_cpf.value;
 
         // cpf.length > 0 || cpf.length < 11
-        if (cpf.length !== 11) {
-            erro(1)
-            // cpf.style.border = '2px solid #e63636';
-            // span_cpf.style.display = 'block';
+        // if (cpf.length !== 11) {
+        //     erro(1)
+        // cpf.style.border = '2px solid #e63636';
+        // span_cpf.style.display = 'block';
+        //     }
+        //     else {
+        //         removerErro(1)
+        //         // cpf.style.border = 'none';
+        //         // span_cpf.style.display = 'none';
+        //     }
+        // }
+        var nomeVar = inp_nome.value;
+        var cpfVar = inp_cpf.value;
+        var emailVar = inp_email.value;
+        var senhaVar = inp_senha.value;
+        var confirmacaoSenhaVar = inp_conf_senha.value;
+
+        if (
+            nomeVar == "" ||
+            cpfVar == "" ||
+            emailVar == "" ||
+            senhaVar == "" ||
+            confirmacaoSenhaVar == ""
+        ) {
+            alert("Mensagem de erro: todos os campos em branco");
+            return false;
         }
-        else {
-            removerErro(1)
-            // cpf.style.border = 'none';
-            // span_cpf.style.display = 'none';
+        else if (cpfVar.length !== 11) {
+            alert("Mensagem de erro: campo cpf deve conter 11 digítos");
+            return false;
         }
     }
+
 </script>

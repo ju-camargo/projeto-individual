@@ -1,9 +1,9 @@
 var casas = [
-    './assets/home/casas.png',
-    './assets/home/lufalufa.png',
-    './assets/home/grifinoria.png',
-    './assets/home/corvinal.png',
-    './assets/home/sonserina.png'
+    './assets/home/casas/casas.png',
+    './assets/home/casas/lufalufa.png',
+    './assets/home/casas/grifinoria.png',
+    './assets/home/casas/corvinal.png',
+    './assets/home/casas/sonserina.png'
 ];
 
 var i = 0;
@@ -24,7 +24,7 @@ function atualizarCasa() {
     // meuContainer.innerHTML = casas[i];
     var item = casas[i];
 
-    if (item.startsWith('./assets/')) {
+    if (item.startsWith('./assets/home/casas/')) {
         // Se o item começar com 'login/src/', é considerado um caminho de imagem
         meuContainer.innerHTML = `<img src="${item}" alt="Imagem" style="width:80%;">`;
     }

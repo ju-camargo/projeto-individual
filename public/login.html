@@ -26,8 +26,10 @@
                     <form id="formulario_login">
                         <!-- Formulário de Login -->
                         <h1 style="color: #2f231c">Login</h1>
-                        <input type="text" placeholder="Email ou CPF" />
-                        <input type="password" placeholder="Senha" />
+
+                        <input id="inp_email" type="text" placeholder="Email ou CPF">
+                        <input id="inp_senha" type="text" placeholder="Senha">
+
                         <button onclick="entrar()" id="btn-form">Entrar</button>
                     </form>
                 </div>
@@ -45,7 +47,29 @@
 </html>
 <script src="./js/carrossel-login-cadastro.js"></script>
 <script>
+    function entrar() {
+        var emailVar = inp_email.value;
+        var senhaVar = inp_senha.value;
 
+        if (emailVar == "" || senhaVar == "") {
+            alert("Mensagem de erro: todos os campos em branco");
+            return false;
+        }
+
+        console.log("form login: ", emailVar);
+        console.log("form senha: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        })
+    }
 
     // function mudarLogin() {
     //     div_login.style.display = "block";
@@ -57,16 +81,16 @@
     //     div_cadastro.style.display = "block";
     // }
 
-    var campos = document.querySelectorAll('.campo');
-    var spans = document.querySelectorAll('.span-required');
+    // var campos = document.querySelectorAll('.campo');
+    // var spans = document.querySelectorAll('.span-required');
 
-    function erro(index) {
-        campos[index].style.border = '2px solid #e63636';
-        spans[index].style.display = 'block';
-    }
+    // function erro(index) {
+    //     campos[index].style.border = '2px solid #e63636';
+    //     spans[index].style.display = 'block';
+    // }
 
-    function removerErro(index) {
-        campos[index].style.border = 'none';
-        spans[index].style.display = 'none';
-    }
+    // function removerErro(index) {
+    //     campos[index].style.border = 'none';
+    //     spans[index].style.display = 'none';
+    // }
 </script>
