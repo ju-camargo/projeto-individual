@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    
+    <script src="./js/sessao.js"></script>
+    <link rel="stylesheet" href="./css/style-login-cadastro.css">
+</head>
+
+<body>
+
+    <div class="box-maior">
+        <div class="inner-box">
+            <div class="formularios">
+
+                <!-- login -->
+                <!-- <div id="div_login"> -->
+                <div class="login">
+                    <div class="login-titulo">
+                        <p><b>Bem-vindo de volta!</b></p>
+                        <p>Ainda não possui uma conta? <a href="cadastro.html">Cadastre-se</a></p>
+                    </div>
+
+                    <form id="formulario_login">
+                        <!-- Formulário de Login -->
+                        <h1 style="color: #2f231c">Login</h1>
+
+                        <input id="inp_email" type="text" placeholder="Email">
+                        <input id="inp_senha" type="password" placeholder="Senha">
+
+                        <button onclick="entrar()" id="btn-form">Entrar</button>
+                    </form>
+                </div>
+                <!-- </div> -->
+
+            </div>
+
+            <div class="carrossel" id="meuContainer">
+                <!-- <p>carrossel</p> -->
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="./js/carrossel-login-cadastro.js"></script>
+<script>
+      function entrar() {
+       
+       var emailVar = inp_email.value
+       var senhaVar = inp_senha.value
+ 
+       if (emailVar == "" || senhaVar == "") {
+           window.alert("Preencha todos os campos para prosseguir!");
+          
+           return false;
+       }
+
+       if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
+           window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
+        
+           return false;
+       }
+
+       console.log("FORM LOGIN: ", emailVar);
+       console.log("FORM SENHA: ", senhaVar);
+
+       fetch("/usuarios/entrar", {
+           method: "POST",
+           headers: {
+               "Content-Type": "application/json"
+           },
+           body: JSON.stringify({
+               emailServer: emailVar,
+               senhaServer: senhaVar
+           })
+       }).then(function (resposta) {
+           console.log("ESTOU NO THEN DO entrar()!")
+
+           if (resposta.ok) {
+               console.log(resposta);
+               alert("Login realizado com sucesso! Redirecionando para dashboard...")
+
+               resposta.json().then(json => {
+                   console.log(json);
+                   console.log(JSON.stringify(json));
+
+                   sessionStorage.EMAIL_USUARIO = json.email;
+                   sessionStorage.NOME_USUARIO = json.nome;
+                   sessionStorage.ID_USUARIO = json.id;
+
+                   setTimeout(function () {
+                       window.location = "dashboard.html";
+                   }, 1000); // apenas para exibir o loading
+
+               });
+
+           } else {
+
+               console.log("Houve um erro ao tentar realizar o login!");
+               alert(`Erro`)
+               resposta.text().then(texto => {
+                   console.error(texto);
+               
+               });
+           }
+
+       }).catch(function (erro) {
+           console.log(erro);  
+       })
+
+       return false;
+   }
+</script>

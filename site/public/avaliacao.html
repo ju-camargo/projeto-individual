@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação | Filmes</title>
+    <link rel="stylesheet" href="./css/style-avaliacao.css">
+</head>
+
+<body>
+
+    <div class="box-maior">
+        <div class="inner-box">
+            <div class="div_esquerda">
+                <!-- avaliacao -->
+                <div class="selecao-home" id="selecao_home">
+                    <p>Selecione o filme que você deseja avaliar:</p>
+
+                    <select name="" id="selecao_filmes" onchange="selecionarFilme()">
+                        <option value="">Filmes</option>
+                        <option value="opcao1">Harry Potter e a Pedra Filosofal</option>
+                        <option value="opcao2">Harry Potter e a Camara Secreta</option>
+                        <option value="opcao3">Harry Potter e o Prisioneiro de Azkaban</option>
+                        <option value="opcao4">Harry Potter e o Cálice de fogo</option>
+                        <option value="opcao5">Harry Potter e a Ordem da Fênix</option>
+                        <option value="opcao6">Harry Potter e o enigma do Princípe</option>
+                        <option value="opcao7">Harry Potter e as Relíquias da Morte: Parte 1</option>
+                        <option value="opcao8">Harry Potter e as Relíquias da Morte: Parte 2</option>
+                    </select>
+
+                    <!-- <button onclick="selecionarFilme()">Selecionar filme</button> -->
+                </div>
+
+                <div class="filme-avaliacao" id="div_filme1" style="display: none;">
+
+                    <!-- filme 1 -->
+                    <b>Harry Potter e a Pedra Filosofal (2001)</b>
+                    <div class="info-filme">
+                        <img src="./assets/avaliacao/filmes/filme1.jpg" alt="pedraFilosofal"
+                            style="width: 25%;"> <br>
+                        <!-- <p>info</p> <br> -->
+                    </div>
+
+                    <div class="estrelas-avaliar" style="display: flex; cursor: pointer;">
+                        <div id="es1" onclick="atualizarEstrelas(1)">
+                            <img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                        <div id="es2" onclick="atualizarEstrelas(2)">
+                            <img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                        <div id="es3" onclick="atualizarEstrelas(3)">
+                            <img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                        <div id="es4" onclick="atualizarEstrelas(4)">
+                            <img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                        <div id="es5" onclick="atualizarEstrelas(5)">
+                            <img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                    </div>
+
+                    <!-- <input type="text" id="inp_avaliacao" placeholder="Descrição"> <br> -->
+
+                    <div class="div_btns">
+                        <button id="btns" onclick="avaliar()">Avaliar</button>
+                        <!-- <button id="btns" onclick="desfazer()">Desfazer</button> -->
+                    </div>
+                </div>
+                <!-- filme 1 - fim -->
+
+
+                <!-- filme 2 - inicio -->
+                <div class="filme-avaliacao" id="div_filme2" style="display: none;">
+
+                    <!-- avaliacao -->
+                    <b>Harry Potter e a Câmara Secreta (2002)</b>
+                    <div class="info-filme">
+                        <img src="../assets/avaliacao/filmes/filme2.jpg" alt="camaraSecreta"
+                            style="width: 25%;"> <br>
+                        <!-- <p>info</p> <br> -->
+                    </div>
+
+                    <div class="estrelas-avaliar" style="display: flex; cursor: pointer;">
+                        <div id="es1" onclick="atualizarEstrelas(1)">
+                            <img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                        <div id="es2" onclick="atualizarEstrelas(2)">
+                            <img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                        <div id="es3" onclick="atualizarEstrelas(3)">
+                            <img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                        <div id="es4" onclick="atualizarEstrelas(4)">
+                            <img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                        <div id="es5" onclick="atualizarEstrelas(5)">
+                            <img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                    </div>
+
+                    <!-- <input type="text" id="inp_avaliacao" placeholder="Descrição"> <br> -->
+
+                    <div class="div_btns">
+                        <button id="btns" onclick="avaliar()">Avaliar</button>
+                        <!-- <button id="btns" onclick="desfazer()">Desfazer</button> -->
+                    </div>
+                </div>
+                <!-- filme 2 - fim -->
+
+
+                <!-- filme 3 - inicio -->
+                <div class="filme-avaliacao" id="div_filme3" style="display: none;">
+
+                    <!-- avaliacao -->
+                    <b>Harry Potter e o Prisioneiro de Askaban (2004)</b>
+                    <div class="info-filme">
+                        <img src="./assets/avaliacao/filmes/filme3.jpg" alt="prisioneiroAsk"
+                            style="width: 25%;"> <br>
+                        <!-- <p>info</p> <br> -->
+                    </div>
+
+                    <div class="estrelas-avaliar" style="display: flex; cursor: pointer;">
+                        <div id="es1" onclick="atualizarEstrelas(1)">
+                            <img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                        <div id="es2" onclick="atualizarEstrelas(2)">
+                            <img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                        <div id="es3" onclick="atualizarEstrelas(3)">
+                            <img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                        <div id="es4" onclick="atualizarEstrelas(4)">
+                            <img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                        <div id="es5" onclick="atualizarEstrelas(5)">
+                            <img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                    </div>
+
+                    <!-- <input type="text" id="inp_avaliacao" placeholder="Descrição"> <br> -->
+
+                    <div class="div_btns">
+                        <button id="btns" onclick="avaliar()">Avaliar</button>
+                        <!-- <button id="btns" onclick="desfazer()">Desfazer</button> -->
+                    </div>
+                </div>
+                <!-- filme 3 - fim -->
+
+                <!-- filme 4 - inicio -->
+                <div class="filme-avaliacao" id="div_filme4" style="display: none;">
+
+                    <!-- avaliacao -->
+                    <b>Harry Potter e o Cálice de Fogo (2005)</b>
+                    <div class="info-filme">
+                        <img src="./assets/avaliacao/filmes/filme4.jpg" alt="caliceFogo"
+                            style="width: 25%;"> <br>
+                        <!-- <p>info</p> <br> -->
+                    </div>
+
+                    <div class="estrelas-avaliar" style="display: flex; cursor: pointer;">
+                        <div id="es1" onclick="atualizarEstrelas(1)">
+                            <img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                        <div id="es2" onclick="atualizarEstrelas(2)">
+                            <img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                        <div id="es3" onclick="atualizarEstrelas(3)">
+                            <img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                        <div id="es4" onclick="atualizarEstrelas(4)">
+                            <img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                        <div id="es5" onclick="atualizarEstrelas(5)">
+                            <img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                    </div>
+
+                    <!-- <input type="text" id="inp_avaliacao" placeholder="Descrição"> <br> -->
+
+                    <div class="div_btns">
+                        <button id="btns" onclick="avaliar()">Avaliar</button>
+                        <!-- <button id="btns" onclick="desfazer()">Desfazer</button> -->
+                    </div>
+                </div>
+                <!-- filme 4 - fim -->
+
+                <!-- filme 5 - inicio -->
+                <div class="filme-avaliacao" id="div_filme5" style="display: none;">
+
+                    <!-- avaliacao -->
+                    <b>Harry Potter e a Ordem da Fênix (2007)</b>
+                    <div class="info-filme">
+                        <img src="./assets/avaliacao/filmes/filme5.jpg" alt="ordemFenix"
+                            style="width: 25%;"> <br>
+                        <!-- <p>info</p> <br> -->
+                    </div>
+
+                    <div class="estrelas-avaliar" style="display: flex; cursor: pointer;">
+                        <div id="es1" onclick="atualizarEstrelas(1)">
+                            <img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                        <div id="es2" onclick="atualizarEstrelas(2)">
+                            <img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                        <div id="es3" onclick="atualizarEstrelas(3)">
+                            <img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                        <div id="es4" onclick="atualizarEstrelas(4)">
+                            <img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                        <div id="es5" onclick="atualizarEstrelas(5)">
+                            <img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                    </div>
+
+                    <!-- <input type="text" id="inp_avaliacao" placeholder="Descrição"> <br> -->
+
+                    <div class="div_btns">
+                        <button id="btns" onclick="avaliar()">Avaliar</button>
+                        <!-- <button id="btns" onclick="desfazer()">Desfazer</button> -->
+                    </div>
+                </div>
+                <!-- filme 5 - fim -->
+
+                <!-- filme 6 - inicio -->
+                <div class="filme-avaliacao" id="div_filme6" style="display: none;">
+
+                    <!-- avaliacao -->
+                    <b>Harry Potter e o enigma do Príncipe (2009)</b>
+                    <div class="info-filme">
+                        <img src="./assets/avaliacao/filmes/filme6.jpg" alt="enigmaPrincipe"
+                            style="width: 25%;"> <br>
+                        <!-- <p>info</p> <br> -->
+                    </div>
+
+                    <div class="estrelas-avaliar" style="display: flex; cursor: pointer;">
+                        <div id="es1" onclick="atualizarEstrelas(1)">
+                            <img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                        <div id="es2" onclick="atualizarEstrelas(2)">
+                            <img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                        <div id="es3" onclick="atualizarEstrelas(3)">
+                            <img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                        <div id="es4" onclick="atualizarEstrelas(4)">
+                            <img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                        <div id="es5" onclick="atualizarEstrelas(5)">
+                            <img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                    </div>
+
+                    <!-- <input type="text" id="inp_avaliacao" placeholder="Descrição"> <br> -->
+
+                    <div class="div_btns">
+                        <button id="btns" onclick="avaliar()">Avaliar</button>
+                        <!-- <button id="btns" onclick="desfazer()">Desfazer</button> -->
+                    </div>
+                </div>
+                <!-- filme 6 - fim -->
+
+                <!-- filme 7 - inicio -->
+                <div class="filme-avaliacao" id="div_filme7" style="display: none;">
+
+                    <!-- avaliacao -->
+                    <b>Harry Potter e as Relíquias da Morte: Parte 1 (2010)</b>
+                    <div class="info-filme">
+                        <img src="./assets/avaliacao/filmes/filme7.jpg" alt="reliquiasM"
+                            style="width: 25%;"> <br>
+                        <!-- <p>info</p> <br> -->
+                    </div>
+
+                    <div class="estrelas-avaliar" style="display: flex; cursor: pointer;">
+                        <div id="es1" onclick="atualizarEstrelas(1)">
+                            <img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                        <div id="es2" onclick="atualizarEstrelas(2)">
+                            <img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                        <div id="es3" onclick="atualizarEstrelas(3)">
+                            <img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                        <div id="es4" onclick="atualizarEstrelas(4)">
+                            <img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                        <div id="es5" onclick="atualizarEstrelas(5)">
+                            <img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                    </div>
+
+                    <!-- <input type="text" id="inp_avaliacao" placeholder="Descrição"> <br> -->
+
+                    <div class="div_btns">
+                        <button id="btns" onclick="avaliar()">Avaliar</button>
+                        <!-- <button id="btns" onclick="desfazer()">Desfazer</button> -->
+                    </div>
+                </div>
+                <!-- filme 7 - fim -->
+
+                <!-- filme 8 - inicio -->
+                <div class="filme-avaliacao" id="div_filme8" style="display: none;">
+
+                    <!-- avaliacao -->
+                    <b>Harry Potter e as Relíquias da Morte: Parte 2 (2011)</b>
+                    <div class="info-filme">
+                        <img src="./assets/avaliacao/filmes/filme8.jpg" alt="reliquiasM"
+                            style="width: 25%;"> <br>
+                        <!-- <p>info</p> <br> -->
+                    </div>
+
+                    <div class="estrelas-avaliar" style="display: flex; cursor: pointer;">
+                        <div id="es1" onclick="atualizarEstrelas(1)">
+                            <img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                        <div id="es2" onclick="atualizarEstrelas(2)">
+                            <img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                        <div id="es3" onclick="atualizarEstrelas(3)">
+                            <img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                        <div id="es4" onclick="atualizarEstrelas(4)">
+                            <img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                        <div id="es5" onclick="atualizarEstrelas(5)">
+                            <img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                    </div>
+
+                    <!-- <input type="text" id="inp_avaliacao" placeholder="Descrição"> <br> -->
+
+                    <div class="div_btns">
+                        <button id="btns" onclick="avaliar()">Avaliar</button>
+                        <!-- <button id="btns" onclick="desfazer()">Desfazer</button> -->
+                    </div>
+                </div>
+                <!-- filme 8 - fim -->
+
+            </div>
+
+            <div class="div_direita">
+                <p>Com base em suas avaliações, seus <br>
+                    3 primeiros filmes favoritos são:</p>
+
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script src="./js/filmes-avaliacao.js"></script>
+<script>
+    var stars = 0;
+
+    function atualizarEstrelas(selecionadas) {
+        stars = selecionadas;
+
+        for (var i = 1; i <= 5; i++) {
+            var div_estrelas = document.getElementById(`es${i}`);
+            if (i <= selecionadas) {
+                div_estrelas.innerHTML = `<img src="../assets/avaliacao/estrelas/estrela2.png" style="width: 35px;">`;
+            } else {
+                div_estrelas.innerHTML = `<img src="../assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">`;
+            }
+        }
+    }
+</script>

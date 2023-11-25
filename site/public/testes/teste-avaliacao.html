@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação | Filmes</title>
+    <link rel="stylesheet" href="../css/style-avaliacao.css">
+</head>
+
+<body>
+
+    <div class="box-maior">
+        <div class="inner-box">
+            <div class="div_esquerda">
+                <!-- avaliacao -->
+                <div class="filmes" id="div_filmes" style="display: none;">
+                    <button onclick="exibirFilme1()">1. Harry Potter e a Pedra Filosofal</button>
+                    <button>2. Harry Potter e a Camêra Secreta</button>
+                    <button>3. Harry Potter e o Prisioneiro de Azkaban</button>
+                    <button>4. Harry Potter e o Cálice de fogo</button>
+                    <button>5. Harry Potter e a Ordem da Fênix</button>
+                    <button>6. Harry Potter e o enigma do Princípe</button>
+                    <button>7. Harry Potter e as Relíquias da Morte: Parte 1</button>
+                    <button>8.. Harry Potter e as Relíquias da Morte: Parte 2</button>
+                </div>
+
+                <div class="selecao-home" id="selecao_home">
+                    <p>Selecione o filme que você deseja avaliar:</p>
+
+                    <select name="" id="selecao_filmes" onchange="selecionarFilme()">
+                        <option value="">Filmes</option>
+                        <option value="opcao1">Harry Potter e a Pedra Filosofal</option>
+                        <option value="opcao2">Harry Potter e a Camara Secreta</option>
+                        <option value="opcao3">Harry Potter e o Prisioneiro de Azkaban</option>
+                        <option value="opcao4">Harry Potter e o Cálice de fogo</option>
+                        <option value="opcao5">Harry Potter e a Ordem da Fênix</option>
+                        <option value="opcao6">Harry Potter e o enigma do Princípe</option>
+                        <option value="opcao7">Harry Potter e as Relíquias da Morte: Parte 1</option>
+                        <option value="opcao8">Harry Potter e as Relíquias da Morte: Parte 2</option>
+                    </select>
+
+                    <!-- <button onclick="selecionarFilme()">Selecionar filme</button> -->
+                </div>
+
+                <div class="selecao" id="selecao" style="display: none;">
+                    <select name="" id="selecao_filme">
+                        <option value="">Selecione o filme que você deseja avaliar</option>
+                        <option value="home">Home</option>
+                        <option value="opcao1">Harry Potter e a Pedra Filosofal</option>
+                        <option value="opcao2">Harry Potter e a Camara Secreta</option>
+                        <option value="opcao3">Harry Potter e o Prisioneiro de Azkaban</option>
+                    </select>
+                </div>
+
+                <div class="filme-avaliacao" id="div_filme1" style="display: none;">
+
+                    <!-- avaliacao -->
+                    <b>Harry Potter e a Pedra Filosofal (2001)</b>
+                    <div class="info-filme">
+                        <img src="../assets/avaliacao/filmes/pedra-filosofal.jpg" alt="pedrafilosofal"
+                            style="width: 25%;"> <br>
+                        <!-- <p>info</p> <br> -->
+                    </div>
+
+                    <div class="estrelas-avaliar" style="display: flex; cursor: pointer;">
+                        <div id="es1" onclick="atualizarEstrelas(1)">
+                            <img src="../assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                        <div id="es2" onclick="atualizarEstrelas(2)">
+                            <img src="../assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                        <div id="es3" onclick="atualizarEstrelas(3)">
+                            <img src="../assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                        <div id="es4" onclick="atualizarEstrelas(4)">
+                            <img src="../assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                        <div id="es5" onclick="atualizarEstrelas(5)">
+                            <img src="../assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                    </div>
+
+                    <!-- <input type="text" id="inp_avaliacao" placeholder="Descrição"> <br> -->
+
+                    <div class="div_btns">
+                        <button id="btns" onclick="avaliar()">Avaliar</button>
+                        <!-- <button id="btns" onclick="desfazer()">Desfazer</button> -->
+                    </div>
+                </div>
+
+
+                <!-- camera secreta -->
+                <div class="filme-avaliacao" id="div_filme2" style="display: none;">
+
+                    <!-- avaliacao -->
+                    <b>Harry Potter e a Câmera Secreta (2001)</b>
+                    <div class="info-filme">
+                        <img src="../assets/avaliacao/filmes/camera-secreta.jpg" alt="pedrafilosofal"
+                            style="width: 25%;"> <br>
+                        <!-- <p>info</p> <br> -->
+                    </div>
+
+                    <div class="estrelas-avaliar" style="display: flex; cursor: pointer;">
+                        <div id="es1" onclick="atualizarEstrelas(1)">
+                            <img src="../assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                        <div id="es2" onclick="atualizarEstrelas(2)">
+                            <img src="../assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                        <div id="es3" onclick="atualizarEstrelas(3)">
+                            <img src="../assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                        <div id="es4" onclick="atualizarEstrelas(4)">
+                            <img src="../assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                        <div id="es5" onclick="atualizarEstrelas(5)">
+                            <img src="../assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                    </div>
+
+                    <!-- <input type="text" id="inp_avaliacao" placeholder="Descrição"> <br> -->
+
+                    <div class="div_btns">
+                        <button id="btns" onclick="avaliar()">Avaliar</button>
+                        <!-- <button id="btns" onclick="desfazer()">Desfazer</button> -->
+                    </div>
+                </div>
+                <!-- filme 2 - fim -->
+
+
+                <!-- filme 3 - inicio -->
+                <div class="filme-avaliacao" id="div_filme3" style="display: none;">
+
+                    <!-- avaliacao -->
+                    <b>Harry Potter e o Prisioneiro de Askaban (2001)</b>
+                    <div class="info-filme">
+                        <img src="../assets/avaliacao/filmes/camera-secreta.jpg" alt="pedrafilosofal"
+                            style="width: 25%;"> <br>
+                        <!-- <p>info</p> <br> -->
+                    </div>
+
+                    <div class="estrelas-avaliar" style="display: flex; cursor: pointer;">
+                        <div id="es1" onclick="atualizarEstrelas(1)">
+                            <img src="../assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                        <div id="es2" onclick="atualizarEstrelas(2)">
+                            <img src="../assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                        <div id="es3" onclick="atualizarEstrelas(3)">
+                            <img src="../assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                        <div id="es4" onclick="atualizarEstrelas(4)">
+                            <img src="../assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                        <div id="es5" onclick="atualizarEstrelas(5)">
+                            <img src="../assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">
+                        </div>
+                    </div>
+
+                    <!-- <input type="text" id="inp_avaliacao" placeholder="Descrição"> <br> -->
+
+                    <div class="div_btns">
+                        <button id="btns" onclick="avaliar()">Avaliar</button>
+                        <!-- <button id="btns" onclick="desfazer()">Desfazer</button> -->
+                    </div>
+                </div>
+                <!-- filme 3 - fim -->
+
+            </div>
+
+            <div class="div_direita">
+                <p>Com base em suas avaliações, seus <br>
+                    3 primeiros filmes favoritos são:</p>
+
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
+<!-- <script src="../js/estrelas-avaliacao.js"></script> -->
+<script>
+    var stars = 0;
+
+    function atualizarEstrelas(selecionadas) {
+        stars = selecionadas;
+
+        for (var i = 1; i <= 5; i++) {
+            var div_estrelas = document.getElementById(`es${i}`);
+            if (i <= selecionadas) {
+                div_estrelas.innerHTML = `<img src="../assets/avaliacao/estrelas/estrela2.png" style="width: 35px;">`;
+            } else {
+                div_estrelas.innerHTML = `<img src="../assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">`;
+            }
+        }
+    }
+
+    function selecionarFilme() {
+        var selecaoFilmes = selecao_filmes.value;
+
+        if (selecaoFilmes == "opcao1") {
+            div_filme1.style.display = 'flex';
+            div_filme2.style.display = 'none';
+            div_filme3.style.display = 'none';
+            div_filme4.style.display = 'none';
+            div_filme5.style.display = 'none';
+            div_filme6.style.display = 'none';
+            div_filme7.style.display = 'none';
+            div_filme8.style.display = 'none';
+        }
+        else if (selecaoFilmes == "opcao2") {
+            div_filme1.style.display = 'none';
+            div_filme2.style.display = 'flex';
+            div_filme3.style.display = 'none';
+            div_filme4.style.display = 'none';
+            div_filme5.style.display = 'none';
+            div_filme6.style.display = 'none';
+            div_filme7.style.display = 'none';
+            div_filme8.style.display = 'none';
+        }
+        else if (selecaoFilmes == "opcao3") {
+            div_filme1.style.display = 'none';
+            div_filme2.style.display = 'none';
+            div_filme3.style.display = 'flex';
+            div_filme4.style.display = 'none';
+            div_filme5.style.display = 'none';
+            div_filme6.style.display = 'none';
+            div_filme7.style.display = 'none';
+            div_filme8.style.display = 'none';
+        }
+    }
+</script>

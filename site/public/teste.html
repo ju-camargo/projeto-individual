@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="teste.css">
+</head>
+
+<body>
+    <div style="display: flex;">
+        <div id="es1" onclick="atualizarEstrelas(1)">
+            <img src="../assets/avaliacao/estrelas/estrelas.jpg" style="width: 50px;">
+        </div>
+        <div id="es2" onclick="atualizarEstrelas(2)">
+            <img src="../assets/avaliacao/estrelas/estrelas.jpg" style="width: 50px;">
+        </div>
+        <div id="es3" onclick="atualizarEstrelas(3)">
+            <img src="../assets/avaliacao/estrelas/estrelas.jpg" style="width: 50px;">
+        </div>
+        <div id="es4" onclick="atualizarEstrelas(4)">
+            <img src="../assets/avaliacao/estrelas/estrelas.jpg" style="width: 50px;">
+        </div>
+        <div id="es5" onclick="atualizarEstrelas(5)">
+            <img src="../assets/avaliacao/estrelas/estrelas.jpg" style="width: 50px;">
+        </div>
+    </div>
+
+    <script>
+        var stars = 0;
+
+        function atualizarEstrelas(selecionadas) {
+            stars = selecionadas;
+
+            for (var i = 1; i <= 5; i++) {
+                var div_estrelas = document.getElementById(`es${i}`);
+                if (i <= selecionadas) {
+                    div_estrelas.innerHTML = `<img src="../assets/avaliacao/estrelas/estrelac.jpg" style="width: 50px;">`;
+                } else {
+                    div_estrelas.innerHTML = `<img src="../assets/avaliacao/estrelas/estrelas.jpg" style="width: 50px;">`;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
+
