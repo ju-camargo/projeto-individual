@@ -8,7 +8,7 @@ create table casa (
 ) auto_increment = 100;
 
 create table usuario (
-	id int primary key auto_increment,
+	idUsuario int primary key auto_increment,
     nome varchar(45),
     email varchar(45),
     senha varchar(45),
@@ -18,8 +18,23 @@ create table usuario (
 );
 
 select * from usuario;
-delete from usuario;
+truncate usuario;
 
+create table pet (
+	idPet int auto_increment,
+    fkDono int,
+    primary key(idPet, fkDono),
+    nome varchar(45),
+    tipo varchar(45),
+    constraint fkdono foreign key (fkDono)
+		references usuario (idUsuario)
+) auto_increment = 200;
+
+create table filme (
+	idFilme int primary key auto_increment,
+    nome varchar(45),
+    anoLancamento int
+);
 
 create table avaliacao (
 	fkFilme int,
@@ -30,12 +45,6 @@ create table avaliacao (
 		references filme (idFilme),
     constraint fkusuario foreign key (fkUsuario)
 		references usuario (idUsuario)
-);
-
-create table filme (
-	idFilme int primary key auto_increment,
-    nome varchar(45),
-    dtLancamento date
 );
 
 insert into filme values
