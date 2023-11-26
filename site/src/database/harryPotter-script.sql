@@ -1,5 +1,6 @@
 create database harrypotter;
 use harrypotter;
+drop database harrypotter;
 
 create table casa (
 	idCasa int primary key auto_increment,
@@ -7,7 +8,7 @@ create table casa (
 ) auto_increment = 100;
 
 create table usuario (
-	idUsuario int primary key auto_increment,
+	id int primary key auto_increment,
     nome varchar(45),
     email varchar(45),
     senha varchar(45),
@@ -17,7 +18,7 @@ create table usuario (
 );
 
 select * from usuario;
-delete from usuario where idUsuario >= 7;
+delete from usuario;
 
 
 create table avaliacao (

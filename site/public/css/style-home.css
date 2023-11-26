@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Cardo&display=swap');
 
+*{
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
@@ -8,12 +16,13 @@ body {
 }
 
 .header {
-  /* background-color: #463931; */
-  background-color: #f2f2f2;
-  height: 80px;
-
-  color: #2f231c;
-  /* color: beige; */
+  background-color: #463931;
+  /* background-color: #f2f2f2; */
+  height: 70px;
+  width: 100%;
+  position: fixed;
+  /* color: #2f231c; */
+  color: #f2f2f2;
 }
 
 .container {
@@ -57,7 +66,7 @@ a {
   background-image: url('../assets/home/hp.jpg');
   /* background-color: rgba(0, 0, 0, 0.5);    */
   background-size: cover;
-  height: 520px;
+  height: 595px;
 
 }
 
@@ -85,9 +94,9 @@ a {
     font-weight: 800;
   } */
 
-.filmes {
+
+.sobre-hp {
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   width: 100%;
   height: 80vh;
@@ -99,9 +108,69 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 40%;
-  background-color: #f2f2f2;
+  width: 50%;
+  height: 90%;
+  background-color: #2f231c;
+  /* border-radius: 15px; */
+  color: #f2f2f2;
+  /* border: 2px #2f231c solid; */
+  border-radius: 15px;
 }
+
+.sobre p {
+  width: 90%;
+}
+
+.onu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 90%;
+  /* background-color: #2f231c; */
+}
+
+/* .ods {
+  display: flex; */
+/* flex-direction: column; */
+/* align-items: center;
+} */
+
+.circulo {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  overflow: hidden;
+  /* margin-bottom: 10px; */
+}
+
+.circulo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.descricao{
+  color: #2f231c;
+  font-weight: bold;
+}
+
+.ods {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  /* flex-direction: column;  */
+  height: 70%;
+  width: 70%;
+  /* width: 100%; */
+  gap: 20px;
+}
+
+/* .ods img{
+  width: 20%;
+  border-radius: 20px;
+} */
 
 
 
@@ -180,9 +249,9 @@ a {
   cursor: pointer;
   width: 20%;
   height: 10%;
-   /* font-family: 'League Spartan', sans-serif;  */
- font-family: 'Cardo', serif;
-} 
+  /* font-family: 'League Spartan', sans-serif;  */
+  font-family: 'Cardo', serif;
+}
 
 .carrossel2 {
   display: flex;
@@ -197,8 +266,8 @@ a {
     background-size: cover; */
   display: flex;
   /* flex-direction: column; */
-  /* align-items: center;
-    justify-content: space-around; */
+  align-items: center;
+    /* justify-content: space-around; */
   width: 100%;
   height: 80vh;
   background-color: #f2f2f2;
@@ -279,11 +348,64 @@ a {
 
 .sobre-mim {
   display: flex;
+  align-items: center;
   width: 100%;
   height: 80vh;
+  background-color: #f2f2f2;
+}
+
+.fotos {
+  display: flex;
+  width: 50%;
+  height: 100%;
+}
+
+.texto {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 90%;
+  background-color: #463931;
+  border-radius: 15px;
+  color: #f2f2f2;
+  /* padding: 5px; */
+}
+
+.texto p {
+  width: 90%;
+  /* height: 100%; */
 }
 
 footer {
-  background-color: #463931;
-  height: 120px;
+  /* background-color: #463931; */
+  background-color: #2f231c;
+  /* height: 90px; */
+  height: 100px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-itens {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 50%;
+  justify-content: space-between;
+}
+
+#redes_sociais {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#redes_sociais img {
+  width: 25px;
+  margin-top: 17px;
+  padding: 20px;
 }

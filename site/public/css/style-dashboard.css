@@ -1,4 +1,3 @@
-/* @import url('https://fonts.googleapis.com/css2?family=League+Spartan&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Cardo&display=swap');
 
 * {
@@ -32,7 +31,7 @@ body {
     width: 80%;
     /* margin: auto; */
     /* background-color: #2f231c; */
-    background-color: #463931;
+    background-color: #2f231c;
     border-radius: 30px;
     overflow: hidden;
     position: relative;
@@ -44,7 +43,7 @@ body {
     align-items: center;
     height: 92%;
     width: 98%;
-    background-color: #463931;
+    background-color: #2f231c;
     border-radius: 15px;
 }
 
@@ -57,9 +56,9 @@ body {
     align-items: center;
     height: 500px;
     width: 20%;
-    background-color: #463931;
     border-radius: 30px;
     gap: 30px;
+    color: #f2f2f2;
 }
 
 .box-maior .inner-box .div_esquerda .perfil {
@@ -81,7 +80,7 @@ body {
 .linha {
     /* display: flex;  */
     /* justify-content: center;  */
-    border: 1px #2f231c solid; 
+    border: 1px #f2f2f2 solid; 
     width: 80%;
 }
 
@@ -173,9 +172,11 @@ a {
     /* background-color: #594336; */
     /* border: 1px #2f231c solid; */
     /* background-color: rgba(59, 43, 36, 0.2); */
-    background-color: #7F6859;
-    /* background-color: rgba(59, 43, 36, 0.5);
-    color: #FFF; */
+    /* background-color: #7F6859; */
+    background-color: #463931;
+    /* color: #f2f2f2; */
+    /* background-color: rgba(59, 43, 36, 0.5); */
+    /* color: #FFF; */
     /* background-color: #FFF; */
 }
 

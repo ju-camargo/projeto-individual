@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    
+
     <script src="./js/sessao.js"></script>
     <link rel="stylesheet" href="./css/style-login-cadastro.css">
 </head>
@@ -48,70 +48,77 @@
 </html>
 <script src="./js/carrossel-login-cadastro.js"></script>
 <script>
-      function entrar() {
-       
-       var emailVar = inp_email.value
-       var senhaVar = inp_senha.value
- 
-       if (emailVar == "" || senhaVar == "") {
-           window.alert("Preencha todos os campos para prosseguir!");
-          
-           return false;
-       }
+    function entrar() {
 
-       if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
-           window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
-        
-           return false;
-       }
+        var emailVar = inp_email.value;
+        var senhaVar = inp_senha.value;
 
-       console.log("FORM LOGIN: ", emailVar);
-       console.log("FORM SENHA: ", senhaVar);
+        if (emailVar == "" || senhaVar == "") {
+            window.alert("Preencha todos os campos para prosseguir!");
+            event.preventDefault();
 
-       fetch("/usuarios/entrar", {
-           method: "POST",
-           headers: {
-               "Content-Type": "application/json"
-           },
-           body: JSON.stringify({
-               emailServer: emailVar,
-               senhaServer: senhaVar
-           })
-       }).then(function (resposta) {
-           console.log("ESTOU NO THEN DO entrar()!")
+            return false;
+        }
 
-           if (resposta.ok) {
-               console.log(resposta);
-               alert("Login realizado com sucesso! Redirecionando para dashboard...")
+        if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
+            window.alert("Email inválido! Verifique e tente novamente.");
+            event.preventDefault();
 
-               resposta.json().then(json => {
-                   console.log(json);
-                   console.log(JSON.stringify(json));
+            return false;
+        }
 
-                   sessionStorage.EMAIL_USUARIO = json.email;
-                   sessionStorage.NOME_USUARIO = json.nome;
-                   sessionStorage.ID_USUARIO = json.id;
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
 
-                   setTimeout(function () {
-                       window.location = "dashboard.html";
-                   }, 1000); // apenas para exibir o loading
 
-               });
 
-           } else {
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
 
-               console.log("Houve um erro ao tentar realizar o login!");
-               alert(`Erro`)
-               resposta.text().then(texto => {
-                   console.error(texto);
-               
-               });
-           }
+            if (resposta.ok) {
+                console.log(resposta);
+                alert("Login realizado com sucesso! Redirecionando para dashboard...");
 
-       }).catch(function (erro) {
-           console.log(erro);  
-       })
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
 
-       return false;
-   }
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                    window.location = "./dashboard.html";
+
+                    // setTimeout(function () {
+                    //     window.location = "./dashboard.html";
+                    // }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+                alert(`Erro`);
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
 </script>
