@@ -1,41 +1,112 @@
-var estrela = 0;
-    function e1() {
-        estrela = 1
-        es1.innerHTML = `<img src="/avaliacao/estrelas/estrelac.jpg" style="width: 30px;">`
-        es2.innerHTML = `<img src="/avaliacao/estrelas/estrelac.jpg" style="width: 30px;">`
-        es3.innerHTML = `<img src="/avaliacao/estrelas/estrelac.jpg" style="width: 30px;">`
-        es4.innerHTML = `<img src="/avaliacao/estrelas/estrelac.jpg" style="width: 30px;">`
-        es5.innerHTML = `<img src="/avaliacao/estrelas/estrelac.jpg" style="width: 30px;">`
+var stars = 0;
+var stars2 = 0;
+var stars3 = 0;
+var stars4 = 0;
+var stars5 = 0;
+var stars6 = 0;
+var stars7 = 0;
+var stars8 = 0;
+
+function atualizarEstrelas(selecionadas) {
+    stars = selecionadas;
+
+    for (var i = 1; i <= 5; i++) {
+        var div_estrelas = document.getElementById(`es${i}`);
+        if (i <= selecionadas) {
+            div_estrelas.innerHTML = `<img src="./assets/avaliacao/estrelas/estrela2.png" style="width: 35px;">`;
+        } else {
+            div_estrelas.innerHTML = `<img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">`;
+        }
     }
-    function e2() {
-        estrela = 2
-        es1.innerHTML = `<img src="/avaliacao/estrelas/estrelac.jpg" style="width: 30px;">`
-        es2.innerHTML = `<img src="/avaliacao/estrelas/estrelac.jpg" style="width: 30px;">`
-        es3.innerHTML = `<img src="/avaliacao/estrelas/estrelac.jpg" style="width: 30px;">`
-        es4.innerHTML = `<img src="/avaliacao/estrelas/estrelac.jpg" style="width: 30px;">`
-        es5.innerHTML = `<img src="/avaliacao/estrelas/estrelac.jpg" style="width: 30px;">`
+}
+
+function atualizarEstrelas2(selecionadas) {
+    stars2 = selecionadas;
+
+    for (var i = 1; i <= 5; i++) {
+        var div_estrelas = document.getElementById(`es${i}c`);
+        if (i <= selecionadas) {
+            div_estrelas.innerHTML = `<img src="./assets/avaliacao/estrelas/estrela2.png" style="width: 35px;">`;
+        } else {
+            div_estrelas.innerHTML = `<img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">`;
+        }
     }
-    function e3() {
-        estrela = 3
-        es1.innerHTML = `<img src="/avaliacao/estrelas/estrelac.jpg" style="width: 30px;">`
-        es2.innerHTML = `<img src="/avaliacao/estrelas/estrelac.jpg" style="width: 30px;">`
-        es3.innerHTML = `<img src="/avaliacao/estrelas/estrelac.jpg" style="width: 30px;">`
-        es4.innerHTML = `<img src="/avaliacao/estrelas/estrelac.jpg" style="width: 30px;">`
-        es5.innerHTML = `<img src="/avaliacao/estrelas/estrelac.jpg" style="width: 30px;">`
+}
+
+function atualizarEstrelas3(selecionadas) {
+    stars3 = selecionadas;
+
+    for (var i = 1; i <= 5; i++) {
+        var div_estrelas = document.getElementById(`es${i}p`);
+        if (i <= selecionadas) {
+            div_estrelas.innerHTML = `<img src="./assets/avaliacao/estrelas/estrela2.png" style="width: 35px;">`;
+        } else {
+            div_estrelas.innerHTML = `<img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">`;
+        }
     }
-    function e4() {
-        estrela = 4
-        es1.innerHTML = `<img src="/avaliacao/estrelas/estrelac.jpg" style="width: 30px;">`
-        es2.innerHTML = `<img src="/avaliacao/estrelas/estrelac.jpg" style="width: 30px;">`
-        es3.innerHTML = `<img src="/avaliacao/estrelas/estrelac.jpg" style="width: 30px;">`
-        es4.innerHTML = `<img src="/avaliacao/estrelas/estrelac.jpg" style="width: 30px;">`
-        es5.innerHTML = `<img src="/avaliacao/estrelas/estrelac.jpg" style="width: 30px;">`
+}
+
+function atualizarEstrelas4(selecionadas) {
+    stars4 = selecionadas;
+
+    for (var i = 1; i <= 5; i++) {
+        var div_estrelas = document.getElementById(`es${i}cf`);
+        if (i <= selecionadas) {
+            div_estrelas.innerHTML = `<img src="./assets/avaliacao/estrelas/estrela2.png" style="width: 35px;">`;
+        } else {
+            div_estrelas.innerHTML = `<img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">`;
+        }
     }
-    function e5() {
-        estrela = 5
-        es1.innerHTML = `<img src="/avaliacao/estrelas/estrelac.jpg" style="width: 30px;">`
-        es2.innerHTML = `<img src="/avaliacao/estrelas/estrelac.jpg" style="width: 30px;">`
-        es3.innerHTML = `<img src="/avaliacao/estrelas/estrelac.jpg" style="width: 30px;">`
-        es4.innerHTML = `<img src="/avaliacao/estrelas/estrelac.jpg" style="width: 30px;">`
-        es5.innerHTML = `<img src="/avaliacao/estrelas/estrelac.jpg" style="width: 30px;">`
+}
+
+function atualizarEstrelas5(selecionadas) {
+    stars5 = selecionadas;
+
+    for (var i = 1; i <= 5; i++) {
+        var div_estrelas = document.getElementById(`es${i}o`);
+        if (i <= selecionadas) {
+            div_estrelas.innerHTML = `<img src="./assets/avaliacao/estrelas/estrela2.png" style="width: 35px;">`;
+        } else {
+            div_estrelas.innerHTML = `<img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">`;
+        }
     }
+}
+
+function atualizarEstrelas6(selecionadas) {
+    stars6 = selecionadas;
+
+    for (var i = 1; i <= 5; i++) {
+        var div_estrelas = document.getElementById(`es${i}ep`);
+        if (i <= selecionadas) {
+            div_estrelas.innerHTML = `<img src="./assets/avaliacao/estrelas/estrela2.png" style="width: 35px;">`;
+        } else {
+            div_estrelas.innerHTML = `<img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">`;
+        }
+    }
+}
+
+function atualizarEstrelas7(selecionadas) {
+    stars7 = selecionadas;
+
+    for (var i = 1; i <= 5; i++) {
+        var div_estrelas = document.getElementById(`es${i}rm1`);
+        if (i <= selecionadas) {
+            div_estrelas.innerHTML = `<img src="./assets/avaliacao/estrelas/estrela2.png" style="width: 35px;">`;
+        } else {
+            div_estrelas.innerHTML = `<img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">`;
+        }
+    }
+}
+
+function atualizarEstrelas8(selecionadas) {
+    stars8 = selecionadas;
+
+    for (var i = 1; i <= 5; i++) {
+        var div_estrelas = document.getElementById(`es${i}rm2`);
+        if (i <= selecionadas) {
+            div_estrelas.innerHTML = `<img src="./assets/avaliacao/estrelas/estrela2.png" style="width: 35px;">`;
+        } else {
+            div_estrelas.innerHTML = `<img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">`;
+        }
+    }
+}

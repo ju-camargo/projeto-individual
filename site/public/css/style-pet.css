@@ -139,6 +139,16 @@ a {
     border-radius: 20px;
 }
 
+.pet-texto {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.pet-texto p {
+    font-size: 14px;
+}
+
 .cadastro {
     display: flex;
     align-items: center;

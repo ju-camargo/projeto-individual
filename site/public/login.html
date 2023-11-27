@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 
-    <script src="./js/sessao.js"></script>
+    <!-- <script src="./js/sessao.js"></script> -->
     <link rel="stylesheet" href="./css/style-login-cadastro.css">
 </head>
 
@@ -31,7 +31,7 @@
                         <input id="inp_email" type="text" placeholder="Email">
                         <input id="inp_senha" type="password" placeholder="Senha">
 
-                        <button onclick="entrar()" id="btn-form">Entrar</button>
+                        <button type="submit" onclick="queryUser()" id="btn-form">Entrar</button>
                     </form>
                 </div>
                 <!-- </div> -->
@@ -48,21 +48,23 @@
 </html>
 <script src="./js/carrossel-login-cadastro.js"></script>
 <script>
-    function entrar() {
 
+    const formulario = document.getElementById("formulario_login");
+
+    formulario.addEventListener("submit", (event) => {
+        event.preventDefault();
         var emailVar = inp_email.value;
         var senhaVar = inp_senha.value;
 
         if (emailVar == "" || senhaVar == "") {
-            window.alert("Preencha todos os campos para prosseguir!");
-            event.preventDefault();
+            alert("Preencha todos os campos para prosseguir!");
 
             return false;
         }
 
-        if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
+        if (emailVar.indexOf("@") == -1) {
             window.alert("Email inválido! Verifique e tente novamente.");
-            event.preventDefault();
+            // event.preventDefault();
 
             return false;
         }
@@ -94,13 +96,9 @@
 
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
+                    sessionStorage.ID_USUARIO = json.idUsuario;
 
-                    window.location = "./dashboard.html";
-
-                    // setTimeout(function () {
-                    //     window.location = "./dashboard.html";
-                    // }, 1000); // apenas para exibir o loading
+                    window.location.href = "./dashboard.html"
 
                 });
 
@@ -119,6 +117,12 @@
             console.log(erro);
         })
 
+        // window.location.href = "www.google.com";
+
+
         return false;
-    }
+    })
+
+        
+    
 </script>
