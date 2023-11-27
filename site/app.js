@@ -20,6 +20,7 @@ app.use(cors());
 
 app.use("/index", indexRouter);
 app.use("/usuarios", usuarioRouter);
+// app.use("/", petRouter);
 app.use("/pet", petRouter);
 
 app.listen(PORTA, function () {

@@ -24,13 +24,14 @@ create table usuario (
 
 select * from usuario;
 select * from pet;
+truncate pet;
 truncate usuario;
 
 create table pet (
 	idPet int primary key auto_increment,
     nome varchar(45),
     tipo varchar(45),
-	fkDono int,
+	fkDono int unique,
     constraint fkdono foreign key (fkDono)
 		references usuario (idUsuario)
 ) auto_increment = 200;

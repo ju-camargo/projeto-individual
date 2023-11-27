@@ -72,8 +72,7 @@
         console.log("FORM LOGIN: ", emailVar);
         console.log("FORM SENHA: ", senhaVar);
 
-
-
+        
         fetch("/usuarios/autenticar", {
             method: "POST",
             headers: {
@@ -116,9 +115,6 @@
         }).catch(function (erro) {
             console.log(erro);
         })
-
-        // window.location.href = "www.google.com";
-
 
         return false;
     })

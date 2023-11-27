@@ -3,8 +3,17 @@ function validarSessao() {
     var email = sessionStorage.EMAIL_USUARIO;
     var nome = sessionStorage.NOME_USUARIO;
     var idUsuario = sessionStorage.ID_USUARIO;
+    var nomePet = sessionStorage.NOME_PET;
+    var tipoPet = sessionStorage.TIPO_PET;
 
     var b_usuario = document.getElementById("b_usuario");
+    var n_pet = document.getElementById("n_pet");
+    var t_pet = document.getElementById("t_pet");
+
+    if(idUsuario != null && nomePet != null && tipoPet != null){
+        n_pet.innerHTML = nomePet;
+        t_pet.innerHTML = tipoPet;
+    }
 
     if (email != null && nome != null) {
         b_usuario.innerHTML = nome;

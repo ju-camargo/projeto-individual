@@ -8,6 +8,14 @@ router.post("/cadastrarPet", function (req, res) {
     petController.cadastrarPet(req, res);
 })
 
+// router.get("/", function(req, res) {
+//     petController.listar(req, res);
+// })
+
+router.get("/listar", function (req, res) {
+    petController.listar(req, res);
+  });
+
 // router.post("/autenticar", function (req, res) {
 //     petController.autenticar(req, res);
 // });

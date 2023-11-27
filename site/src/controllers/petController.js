@@ -41,6 +41,31 @@ function cadastrarPet(req, res) {
     }
 }
 
+// function listar(req, res){
+//     petModel.listar()
+
+//     .then(
+//         function (resultado) {
+//             console.log("Listagem das informações do pet: ", resultado);
+//             res.json(resultado);
+//         }
+//     )
+//         .catch(
+//             function (erro) {
+//                 console.log(erro);
+//                 console.error("Erro durante a listagem: ", erro)
+//                 res.status(500).json(erro.sqlMessage);
+//             }
+//         );
+// }
+
+function listar(req, res) {
+    empresaModel.listar().then((resultado) => {
+      res.status(200).json(resultado);
+    });
+  }
+
 module.exports = {
-    cadastrarPet
+    cadastrarPet,
+    listar
 }
