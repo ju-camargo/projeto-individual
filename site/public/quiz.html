@@ -241,7 +241,8 @@
                             "Content-Type": "application/json"
                         },
                         body: JSON.stringify({
-                            fkCasaServer: fkCasaVar
+                            fkCasaServer: fkCasaVar,
+                            idCasa: sessionStorage.idCasa
                             // idCasaServer: idCasaVar
                         })
                     }).then(function (resposta) {

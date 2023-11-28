@@ -83,11 +83,12 @@
     // }
 
     function cadastrarCasa(req, res) {
+        var idCasa = req.body.idCasa;
         var fkCasa = req.body.fkCasaServer;
         // var idCasa = req.body.idCasaServer;
         // var idCasaVar = req.body.idCasaServer;
 
-        quizModel.cadastrarCasa(fkCasa)
+        quizModel.cadastrarCasa(idCasa, fkCasa)
             .then(function (resultado) {
                 res.json(resultado);
             })
