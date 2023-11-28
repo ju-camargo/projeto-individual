@@ -145,6 +145,14 @@
                 if (resposta.ok) {
                     alert("Cadastro realizado com sucesso!");
 
+                    resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.NOME_PET = json.nome;
+
+                });
+
                 } else {
                     throw "Houve um erro ao tentar realizar o cadastro!";
                 }

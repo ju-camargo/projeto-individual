@@ -39,9 +39,9 @@
                         <a href="./pet.html">Cadastrar pet</a>
                     </li>
 
-                    <li>
+                    <!-- <li>
                         <a href="">Avaliações</a>
-                    </li>
+                    </li> -->
 
                     <li>
                         <a href="./graficos.html">Gráficos</a>
@@ -92,7 +92,7 @@
                         <div class="div_pet">
                             <!-- <b>Escolha também um pet para você levar para Hogwarts:</b> -->
                             <img src="./assets/dashboard/edwiges.png" alt="" style="width: 100px;">
-                            <p>Seu pet:</p> <b id=""></b>
+                            <p>Seu pet:</p> <b id="n_pet"></b>
 
                             <p>Ainda não cadastrou seu pet? <br>
                                 Cadastre por aqui.</p>
@@ -111,4 +111,7 @@
 <script>
     var nome = sessionStorage.NOME_USUARIO;
     b_usuario.innerHTML = (`${nome}!`);
+
+    var nomePet = sessionStorage.NOME_PET;
+    n_pet.innerHTML = (`${nomePet}`);
 </script>

@@ -146,7 +146,7 @@
 </body>
 
 </html>
-<!-- <script src="./src/controllers/quizController.js"></script> -->
+
 <script>
     var respostas = [];
 
@@ -226,106 +226,72 @@
         var percentualSonserina = (pontosSonserina / maxPontos) * 100;
 
         if (percentualGrifinoria > percentualCorvinal && percentualGrifinoria > percentualLufaLufa && percentualGrifinoria > percentualSonserina) {
-        var casa = 'Grifinória';
-        var fkCasaVar = casa;
-        // var idCasaVar = 100;  // Ajuste conforme o ID real da Grifinória.
+            casa = `Grifinória`;
+            var fkCasaVar = casa;
+            var idCasaVar = sessionStorage.ID_CASA;
 
-        // Chama a função para obter o ID da casa
-        // quizController.obterIdCasa(casa)
-        //     .then(function (idCasaObtido) {
-                // if (idCasaObtido === idCasa) {
-                    // Se o ID da casa obtido é o esperado, faz a requisição para cadastrar a fkCasa
-                    fetch("/quiz/cadastrarCasa", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify({
-                            fkCasaServer: fkCasaVar
-                            // idCasaServer: idCasaVar
-                        })
-                    }).then(function (resposta) {
-                        console.log("ESTOU NO THEN DO entrar()!");
-
-                        if (resposta.ok) {
-                            console.log(resposta);
-
-                            resposta.json().then(json => {
-                                console.log(json);
-                                console.log(JSON.stringify(json));
-                            });
-                        } else {
-                            console.log("Houve um erro ao tentar realizar o login!");
-                            alert("Erro");
-
-                            resposta.text().then(texto => {
-                                console.error(texto);
-                            });
-                        }
-                    }).catch(function (erro) {
-                        console.log(erro);
-                    });
-                // } else {
-                //     console.error("ID da casa obtido não corresponde ao esperado.");
-                // }
-            // })
-            // .catch(function (erro) {
-            //     console.error(erro);
-            // });
-    }
+            //cria uma requisição
+            // fetch 
 
 
-        // if (percentualGrifinoria > percentualCorvinal && percentualGrifinoria > percentualLufaLufa && percentualGrifinoria > percentualSonserina) {
-        //     casa = `Grifinória`;
-        //     var idCasa = 100;
-            
-        //     //cria uma requisição
-        //     // fetch 
+            console.log("fkcasa: ", fkCasaVar);
+            console.log("idcasa: ", idCasaVar);
 
-        //     //vai ter a tabela casa contendo os nomes das casas -> if(casa = 'Grifinória' == idCasa = 100)
-        //     // oq preciso cadastrar é a fkCasa na tabela usuario
+            //vai ter a tabela casa contendo os nomes das casas -> if(casa = 'Grifinória' == idCasa = 100)
+            // oq preciso cadastrar é a fkCasa na tabela usuario
 
-        //     obterIdCasa(casa)
+            // var idCasa = sessionStorage.ID_CASA;
 
-        //         fetch("/quiz/cadastrarCasa", {
-        //             method: "POST",
-        //             headers: {
-        //                 "Content-Type": "application/json"
-        //             },
-        //             body: JSON.stringify({
-        //                 fkCasaServer: fkCasaVar,
-        //                 idCasaServer: idCasaVar
+                fetch("/quiz/cadastrarCasa", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        // emailServer: emailVar,
+                        // senhaServer: senhaVar
+                        fkCasaServer: fkCasaVar,
+                        idCasaServer: idCasaVar
 
-        //             })
-        //         }).then(function (resposta) {
-        //             console.log("ESTOU NO THEN DO entrar()!")
+                    })
+                }).then(function (resposta) {
+                    console.log("ESTOU NO THEN DO entrar()!")
 
-        //             if (resposta.ok) {
-        //                 console.log(resposta);
-                        
-        //                 resposta.json().then(json => {
-        //                     console.log(json);
-        //                     console.log(JSON.stringify(json));
+                    if (resposta.ok) {
+                        console.log(resposta);
+                        // alert("Login realizado com sucesso! Redirecionando para dashboard...");
 
-        //                 });
+                        resposta.json().then(json => {
+                            console.log(json);
+                            console.log(JSON.stringify(json));
 
-        //             } else {
+                            // sessionStorage.EMAIL_USUARIO = json.email;
+                            // sessionStorage.NOME_USUARIO = json.nome;
 
-        //                 console.log("Houve um erro ao tentar realizar o login!");
-        //                 alert(`Erro`);
-
-        //                 resposta.text().then(texto => {
-        //                     console.error(texto);
-
-        //                 });
-        //             }
-
-        //         }).catch(function (erro) {
-        //             console.log(erro);
-        //         })
+                            // sessionStorage.ID_CASA = json.idCasa;
 
 
-        // }
+                            // window.location.href = "./dashboard.html"
+
+                        });
+
+                    } else {
+
+                        console.log("Houve um erro ao tentar realizar o login!");
+                        alert(`Erro`);
+
+                        resposta.text().then(texto => {
+                            console.error(texto);
+
+                        });
+                    }
+
+                }).catch(function (erro) {
+                    console.log(erro);
+                })
+
+
+        }
         else if (percentualCorvinal > percentualLufaLufa && percentualCorvinal > percentualSonserina) {
             casa = `Corvinal`;
         }
