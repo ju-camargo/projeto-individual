@@ -7,10 +7,14 @@ create table casa (
 ) auto_increment = 100;
 
 insert into casa values
-	(null, 'Grifinória'),
-    (null, 'Lufa-lufa'),
-    (null, 'Corvinal'),
-    (null, 'Sonserina');
+	(null, 'Grifinória'), -- 100
+    (null, 'Lufa-lufa'), -- 101
+    (null, 'Corvinal'), -- 102
+    (null, 'Sonserina'); -- 103
+    
+select * from casa;
+
+INSERT INTO usuario (fkCasa) VALUES (100);
 
 create table usuario (
 	idUsuario int primary key auto_increment,
@@ -22,8 +26,10 @@ create table usuario (
 		references casa (idCasa)
 );
 
+
 select * from usuario;
 select * from pet;
+delete from pet where idPet = 4;
 truncate pet;
 truncate usuario;
 
@@ -62,3 +68,9 @@ create table avaliacao (
     constraint fkusuario foreign key (fkUsuario)
 		references usuario (idUsuario)
 );
+
+select * from avaliacao;
+truncate avaliacao;
+
+select pet.*, u.nome from usuario as u
+join pet on fkDono = idUsuario;
