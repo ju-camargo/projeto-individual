@@ -37,9 +37,9 @@
                         <a href="./pet.html">Cadastrar pet</a>
                     </li>
 
-                    <li>
+                    <!-- <li>
                         <a href="">Avaliações</a>
-                    </li>
+                    </li> -->
 
                     <li>
                         <a href="./graficos.html">Gráficos</a>
@@ -75,7 +75,7 @@
                         <h1 style="color: #2f231c; font-size: 20px;">Cadastre seu pet:</h1>
 
                         <input id="inp_nome" type="text" placeholder="Nome">
-                        <input id="inp_tipo" type="text" placeholder="Tipo (Coruja, gato, etc)">
+                        <input id="inp_tipo" type="text" placeholder="Raça (Coruja, gato, etc)">
 
                         <button onclick="cadastrarPet()" id="btn-form">Cadastrar</button>
 
@@ -84,13 +84,11 @@
                     <div class="resultado">
                         <b>Informações de seu pet:</b> <br>
 
-                        <!-- Nome: <p id="n_pet"></p> <br>
-                        Tipo: <p id="t_pet"></p> <br>
-                        Dono: <p id="b_usuario"></p> -->
+                        <!-- <div id="listarPet"></div> -->
+                        Nome do Pet: <p id="nomePet"></p>
+                        Raça: <p id="raca"></p>
+                        Dono: <p id="b_usuario"></p>
 
-                        <ul id="listarPet">
-
-                        </ul>
                     </div>
                 </div>
 
@@ -101,20 +99,20 @@
 
 </html>
 <script>
-    // var nomePet = sessionStorage.NOME_PET;
-    // n_pet.innerHTML = (`${nomePet}`);
-
-    // var tipoPet = sessionStorage.TIPO_PET;
-    // t_pet.innerHTML = (`${tipoPet}`);
-
-    // var nome = sessionStorage.NOME_USUARIO;
-    // b_usuario.innerHTML = (`${nome}`);
-
-   
 
     function cadastrarPet() {
         var nomeVar = inp_nome.value;
         var tipoVar = inp_tipo.value;
+        var fkDonoVar = sessionStorage.ID_USUARIO;
+        var nome = sessionStorage.NOME_USUARIO;
+
+        // listarPet.innerHTML = `
+        //     Nome do pet: ${nomeVar} <br>
+        //     Raça: ${tipoVar} <br>
+        // `
+        nomePet.innerHTML = `${nomeVar}`
+        raca.innerHTML = `${tipoVar}`
+        b_usuario.innerHTML = `${nome}`
 
         if (
             nomeVar == "" ||
@@ -125,100 +123,39 @@
             return false;
         }
 
-        else {
+        // else {
 
+        // Enviando o valor da nova input
+        fetch("/pet/cadastrarPet", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                tipoServer: tipoVar,
+                fkDonoServer: fkDonoVar
+            }),
+        })
+            .then(function (resposta) {
+                console.log("resposta: ", resposta);
 
-            // Enviando o valor da nova input
-            fetch("/pet/cadastrarPet", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    // crie um atributo que recebe o valor recuperado aqui
-                    // Agora vá para o arquivo routes/usuario.js
-                    nomeServer: nomeVar,
-                    tipoServer: tipoVar,
-                    fkDonoServer: sessionStorage.ID_USUARIO
-                }),
+                if (resposta.ok) {
+                    alert("Cadastro realizado com sucesso!");
+
+                } else {
+                    throw "Houve um erro ao tentar realizar o cadastro!";
+                }
             })
-                .then(function (resposta) {
-                    console.log("resposta: ", resposta);
-
-                    if (resposta.ok) {
-                        alert("Cadastro realizado com sucesso!");
-
-                        // sessionStorage.NOME_PET = json.nomeVar;
-                        // sessionStorage.TIPO_PET = json.tipoVar;
-                        // sessionStorage.NOME_USUARIO = json.nome;
-                    } else {
-                        throw "Houve um erro ao tentar realizar o cadastro!";
-                    }
-                })
-                // .catch(function (resposta) {
-                //     console.log(`#ERRO: ${resposta}`);
-                //     // finalizarAguardar();
-                // });
-        }
+            .catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+                // finalizarAguardar();
+            });
 
         return false;
     }
 
-    // pets = [];
-    // function pegarDados() {
-
-    //     fetch("/pet", {
-    //         method: "GET",
-    //         headers: {
-    //             "Content-Type": "application/json"
-    //         }
-    //     }).then(function (resposta) {
-    //         if (resposta.ok) {
-    //             console.log(resposta);
-
-    //             resposta.json().then(json => {
-    //                 console.log(json);
-    //                 pets = json
-    //                 exibirDados(pets);
-    //             }
-    //             )}
-    //     })
     // }
-
-    // function exibirDados(petsParaExibir){
-    //     var listaPets = document.getElementById("listarPet");
-    //     listarPets.innerHTML = "";
-    //     return infoPet.pet;
-
-    //     petsParaExibir.forEach(function (infoPet) {
-    //         var listItem = document.createElement("li");
-    //         listItem.classList.add("pet");
-
-    //         var petInfo = document.createElement("div");
-    //         petInfo.innerHTML = "<strong>" + infoPet.pet + "</strong><br>" +
-    //         "Nome: " + infoPet.nome + "<br>" +
-    //         "Tipo: " + infoPet.tipo + "<br>" +
-    //         "Dono: "+ infoPet.fkDono;
-
-    //         listItem.appendChild(petInfo);
-
-    //         listaPets.appendChild(listItem);
-    //     });
-    // }
-
-function listar() {
-        fetch("/pet/listar", {
-            method: "GET",
-        })
-            .then(function (resposta) {
-                resposta.json().then((pet) => {
-                    pet.forEach((pet) => {
-                        listaPet.innerHTML += ``;
-                    });
-                });
-            })
-            .catch(function (resposta) {
-                console.log(`#ERRO: ${resposta}`);
-            });
-    }
 </script>

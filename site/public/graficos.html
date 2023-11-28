@@ -93,9 +93,9 @@
             div_filmes.style.display = 'none';
             div_casas.style.display = 'flex';
         }
-        else if (selecao == "filmes"){
+        else if (selecao == "filmes") {
             div_filmes.style.display = 'flex';
-            div_casas.style.display = 'none';  
+            div_casas.style.display = 'none';
         }
     }
 
@@ -127,7 +127,7 @@
             }
         }
     });
-     
+
 
     new Chart(ctx2, {
         type: 'doughnut',
@@ -152,4 +152,30 @@ lufa-lufa: #fbec5d
 grifinoria: #9c1111
 corvinal: #0a497b
 sonserina: #396c2e*/
+
+    function obterDadosGrafico(idAquario) {
+
+        alterarTitulo(idAquario)
+
+        if (proximaAtualizacao != undefined) {
+            clearTimeout(proximaAtualizacao);
+        }
+
+        fetch(`/medidas/ultimas/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+                    plotarGrafico(resposta, idAquario);
+
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
 </script>

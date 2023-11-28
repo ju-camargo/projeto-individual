@@ -13,22 +13,30 @@ function cadastrarPet(nome, tipo, fkDono) {
     return database.executar(instrucao);
 }
 
-function listar(){
-    var instrucao = `SELECT * FROM pet;`;
+// function listar(){
+//     var instrucao = `SELECT * FROM pet;`;
 
-    console.log("Executando a instrução SQL: \n" + instrucao);
-    return database.executar(instrucao)
-    .then(result => {
-        console.log("Operação bem-sucedida:", result);
-        return result;
-    })
-    .catch(error => {
-        console.error("Erro na operação:", error);
-        throw error;
-    });
-}
+//     console.log("Executando a instrução SQL: \n" + instrucao);
+//     return database.executar(instrucao)
+//     .then(result => {
+//         console.log("Operação bem-sucedida:", result);
+//         return result;
+//     })
+//     .catch(error => {
+//         console.error("Erro na operação:", error);
+//         throw error;
+//     });
+// }
+
+// function listar() {
+//     var instrucao = `
+//     select * from pet;
+//     `
+//     console.log("Executando a instrução SQL: \n" + instrucao);
+
+//     return database.executar(instrucao);
+//   }
 
 module.exports = {
-    cadastrarPet, 
-    listar
+    cadastrarPet
 };

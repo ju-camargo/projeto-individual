@@ -7,6 +7,47 @@ var stars6 = 0;
 var stars7 = 0;
 var stars8 = 0;
 
+function avaliar() {
+    // Enviando o valor da nova input
+    fetch("/usuarios/cadastrar", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            // crie um atributo que recebe o valor recuperado aqui
+            // Agora vá para o arquivo routes/usuario.js
+            starsServer: stars,
+            stars2Server: stars2,
+            stars3Server: stars3,
+            stars4Server: stars4,
+            stars5Server: stars5,
+            stars6Server: stars6,
+            stars7Server: stars7,
+            stars8Server: stars8
+
+        }),
+    })
+        .then(function (resposta) {
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+            
+                alert("Avaliação feita com sucesso!");
+
+            } else {
+                throw "Houve um erro ao tentar realizar o cadastro!";
+            }
+        })
+        .catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            // finalizarAguardar();
+        });
+
+    return false;
+}
+
+
 function atualizarEstrelas(selecionadas) {
     stars = selecionadas;
 

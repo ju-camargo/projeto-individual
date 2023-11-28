@@ -6,6 +6,8 @@ function cadastrarPet(req, res) {
     var tipo = req.body.tipoServer;
     var fkDono = req.body.fkDonoServer;
 
+    console.log("Dados recebidos no petController: ", nome, tipo, fkDono);
+
     // Faça as validações dos valores
     if (nome == undefined) {
         res.status(400).send("O nome está undefined!");
@@ -42,9 +44,9 @@ function cadastrarPet(req, res) {
 }
 
 // function listar(req, res){
-//     petModel.listar()
-
-//     .then(
+   
+   
+//     petModel.listar().then(
 //         function (resultado) {
 //             console.log("Listagem das informações do pet: ", resultado);
 //             res.json(resultado);
@@ -59,13 +61,12 @@ function cadastrarPet(req, res) {
 //         );
 // }
 
-function listar(req, res) {
-    empresaModel.listar().then((resultado) => {
-      res.status(200).json(resultado);
-    });
-  }
+// function listar(req, res) {
+//     petModel.listar().then((resultado) => {
+//       res.status(200).json(resultado);
+//     });
+//   }
 
 module.exports = {
-    cadastrarPet,
-    listar
+    cadastrarPet
 }
