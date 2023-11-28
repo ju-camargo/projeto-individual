@@ -7,9 +7,69 @@ var stars6 = 0;
 var stars7 = 0;
 var stars8 = 0;
 
-function avaliar() {
+// function avaliar() {
+//     // Enviando o valor da nova input
+//     fetch("/usuarios/cadastrar", {
+//         method: "POST",
+//         headers: {
+//             "Content-Type": "application/json",
+//         },
+//         body: JSON.stringify({
+//             // crie um atributo que recebe o valor recuperado aqui
+//             // Agora vá para o arquivo routes/usuario.js
+//             starsServer: stars,
+//             stars2Server: stars2,
+//             stars3Server: stars3,
+//             stars4Server: stars4,
+//             stars5Server: stars5,
+//             stars6Server: stars6,
+//             stars7Server: stars7,
+//             stars8Server: stars8
+
+//         }),
+//     })
+//         .then(function (resposta) {
+//             console.log("resposta: ", resposta);
+
+//             if (resposta.ok) {
+            
+//                 alert("Avaliação feita com sucesso!");
+
+//             } else {
+//                 throw "Houve um erro ao tentar realizar o cadastro!";
+//             }
+//         })
+//         .catch(function (resposta) {
+//             console.log(`#ERRO: ${resposta}`);
+//             // finalizarAguardar();
+//         });
+
+//     return false;
+// }
+
+var estrelaVar = 0;
+
+function atualizarEstrelas(selecionadas) {
+    stars = selecionadas;
+
+    for (var i = 1; i <= 5; i++) {
+        var div_estrelas = document.getElementById(`es${i}`);
+        if (i <= selecionadas) {
+            div_estrelas.innerHTML = `<img src="./assets/avaliacao/estrelas/estrela2.png" style="width: 35px;">`;
+             estrelaVar++;
+        } else {
+            div_estrelas.innerHTML = `<img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">`;
+        }
+    }
+}
+
+function avaliar1(){
+    // var fkFilmeVar = sessionStorage.ID_FILME;
+    var fkFilmeVar = 1;
+    var fkUsuarioVar = sessionStorage.ID_USUARIO;
+
     // Enviando o valor da nova input
-    fetch("/usuarios/cadastrar", {
+    fetch("/avaliacao/avaliar1", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -17,14 +77,9 @@ function avaliar() {
         body: JSON.stringify({
             // crie um atributo que recebe o valor recuperado aqui
             // Agora vá para o arquivo routes/usuario.js
-            starsServer: stars,
-            stars2Server: stars2,
-            stars3Server: stars3,
-            stars4Server: stars4,
-            stars5Server: stars5,
-            stars6Server: stars6,
-            stars7Server: stars7,
-            stars8Server: stars8
+            fkFilmeServer: fkFilmeVar,
+            fkUsuarioServer: fkUsuarioVar,
+            starsServer: estrelaVar
 
         }),
     })
@@ -47,20 +102,6 @@ function avaliar() {
     return false;
 }
 
-
-function atualizarEstrelas(selecionadas) {
-    stars = selecionadas;
-
-    for (var i = 1; i <= 5; i++) {
-        var div_estrelas = document.getElementById(`es${i}`);
-        if (i <= selecionadas) {
-            div_estrelas.innerHTML = `<img src="./assets/avaliacao/estrelas/estrela2.png" style="width: 35px;">`;
-        } else {
-            div_estrelas.innerHTML = `<img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">`;
-        }
-    }
-}
-
 function atualizarEstrelas2(selecionadas) {
     stars2 = selecionadas;
 
@@ -68,6 +109,7 @@ function atualizarEstrelas2(selecionadas) {
         var div_estrelas = document.getElementById(`es${i}c`);
         if (i <= selecionadas) {
             div_estrelas.innerHTML = `<img src="./assets/avaliacao/estrelas/estrela2.png" style="width: 35px;">`;
+            estrelaVar++;
         } else {
             div_estrelas.innerHTML = `<img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">`;
         }
@@ -81,6 +123,7 @@ function atualizarEstrelas3(selecionadas) {
         var div_estrelas = document.getElementById(`es${i}p`);
         if (i <= selecionadas) {
             div_estrelas.innerHTML = `<img src="./assets/avaliacao/estrelas/estrela2.png" style="width: 35px;">`;
+            estrelaVar++;
         } else {
             div_estrelas.innerHTML = `<img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">`;
         }
@@ -94,6 +137,7 @@ function atualizarEstrelas4(selecionadas) {
         var div_estrelas = document.getElementById(`es${i}cf`);
         if (i <= selecionadas) {
             div_estrelas.innerHTML = `<img src="./assets/avaliacao/estrelas/estrela2.png" style="width: 35px;">`;
+            estrelaVar++;
         } else {
             div_estrelas.innerHTML = `<img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">`;
         }
@@ -107,6 +151,7 @@ function atualizarEstrelas5(selecionadas) {
         var div_estrelas = document.getElementById(`es${i}o`);
         if (i <= selecionadas) {
             div_estrelas.innerHTML = `<img src="./assets/avaliacao/estrelas/estrela2.png" style="width: 35px;">`;
+            estrelaVar++;
         } else {
             div_estrelas.innerHTML = `<img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">`;
         }
@@ -120,6 +165,7 @@ function atualizarEstrelas6(selecionadas) {
         var div_estrelas = document.getElementById(`es${i}ep`);
         if (i <= selecionadas) {
             div_estrelas.innerHTML = `<img src="./assets/avaliacao/estrelas/estrela2.png" style="width: 35px;">`;
+            estrelaVar++;
         } else {
             div_estrelas.innerHTML = `<img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">`;
         }
@@ -133,6 +179,7 @@ function atualizarEstrelas7(selecionadas) {
         var div_estrelas = document.getElementById(`es${i}rm1`);
         if (i <= selecionadas) {
             div_estrelas.innerHTML = `<img src="./assets/avaliacao/estrelas/estrela2.png" style="width: 35px;">`;
+            estrelaVar++;
         } else {
             div_estrelas.innerHTML = `<img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">`;
         }
@@ -146,6 +193,7 @@ function atualizarEstrelas8(selecionadas) {
         var div_estrelas = document.getElementById(`es${i}rm2`);
         if (i <= selecionadas) {
             div_estrelas.innerHTML = `<img src="./assets/avaliacao/estrelas/estrela2.png" style="width: 35px;">`;
+            estrelaVar++;
         } else {
             div_estrelas.innerHTML = `<img src="./assets/avaliacao/estrelas/estrela1.png" style="width: 35px;">`;
         }

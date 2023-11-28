@@ -20,4 +20,4 @@ router.post("/cadastrarPet", function (req, res) {
 //     petController.autenticar(req, res);
 // });
 
-  module.exports = router;
+module.exports = router;

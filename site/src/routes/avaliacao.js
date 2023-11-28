@@ -4,8 +4,8 @@ var router = express.Router();
 var avaliacaoController = require("../controllers/avaliacaoController");
 
 //Recebendo os dados do html e direcionando para a função cadastrar de usuarioController.js
-router.post("/avaliar", function (req, res) {
-    avaliacaoController.avaliar(req, res);
+router.post("/avaliar1", function (req, res) {
+    avaliacaoController.avaliar1(req, res);
 })
 
 

@@ -11,6 +11,7 @@ var app = express();
 var indexRouter = require("./src/routes/index")
 var usuarioRouter = require("./src/routes/usuarios");
 var petRouter = require("./src/routes/pet");
+var avaliacaoRouter = require("./src/routes/avaliacao");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -20,8 +21,8 @@ app.use(cors());
 
 app.use("/index", indexRouter);
 app.use("/usuarios", usuarioRouter);
-// app.use("/", petRouter);
 app.use("/pet", petRouter);
+app.use("/avaliacao", avaliacaoRouter);
 
 app.listen(PORTA, function () {
     console.log(`Servidor do seu site já está rodando! Acesse o caminho a seguir para visualizar: http://localhost:${PORTA} \n
