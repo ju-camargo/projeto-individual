@@ -85,9 +85,9 @@
                         <b>Informações de seu pet:</b> <br>
 
                         <!-- <div id="listarPet"></div> -->
-                        Nome do Pet: <p id="nomePet"></p>
-                        Raça: <p id="raca"></p>
-                        Dono: <p id="b_usuario"></p>
+                        Nome do Pet: <b id="nomePet"></b>
+                        Raça: <b id="raca"></b>
+                        Dono: <b id="b_usuario"></b>
 
                     </div>
                 </div>
@@ -125,15 +125,12 @@
 
         // else {
 
-        // Enviando o valor da nova input
         fetch("/pet/cadastrarPet", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                // crie um atributo que recebe o valor recuperado aqui
-                // Agora vá para o arquivo routes/usuario.js
                 nomeServer: nomeVar,
                 tipoServer: tipoVar,
                 fkDonoServer: fkDonoVar

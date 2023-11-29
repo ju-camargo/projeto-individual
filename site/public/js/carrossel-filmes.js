@@ -24,11 +24,9 @@ function retrocederFilme() {
 }
 
 function atualizarFilme() {
-    // meuContainer.innerHTML = filmes[i];
     var item = filmes[c];
 
     if (item.startsWith('./assets/home/')) {
-        // Se o item começar com 'login/src/', é considerado um caminho de imagem
         meuContainer2.innerHTML = `<img src="${item}" alt="Imagem" style="width: 90%;">`;
     }
 }
@@ -37,7 +35,7 @@ function atualizarFilme() {
 // Adiciona a funcionalidade de carrossel automático
 var intervaloFilmes = setInterval(function () {
     avancarFilme();
-}, 5000); // Troca automaticamente a cada 2 segundos
+}, 2000);
 
 // Pára a troca automática quando o mouse entra no contêiner
 meuContainer2.addEventListener('mouseenter', function () {
@@ -48,5 +46,5 @@ meuContainer2.addEventListener('mouseenter', function () {
 meuContainer2.addEventListener('mouseleave', function () {
     intervaloFilmes = setInterval(function () {
         avancarFilme();
-    }, 5000);
+    }, 2000);
 });

@@ -360,6 +360,14 @@ a {
   height: 100%;
 }
 
+.carrossel3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* width: 80%; */
+  background-color: #f2f2f2;
+}
+
 .texto {
   display: flex;
   /* flex-direction: column; */
@@ -376,6 +384,18 @@ a {
 .texto p {
   width: 90%;
   /* height: 100%; */
+}
+
+.fotos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 90%;
+    /* background-color: #2f231c; */
+    border-radius: 15px;
+    /* color: #f2f2f2; */
 }
 
 footer {

@@ -21,11 +21,9 @@ function retrocederCasa() {
 }
 
 function atualizarCasa() {
-    // meuContainer.innerHTML = casas[i];
     var item = casas[i];
 
     if (item.startsWith('./assets/home/casas/')) {
-        // Se o item começar com 'login/src/', é considerado um caminho de imagem
         meuContainer.innerHTML = `<img src="${item}" alt="Imagem" style="width:80%;">`;
     }
 }
@@ -33,7 +31,7 @@ function atualizarCasa() {
 // Adiciona a funcionalidade de carrossel automático
 var intervaloCasas = setInterval(function () {
     avancarCasa();
-}, 5000); 
+}, 2000); 
 
 // Pára a troca automática quando o mouse entra no contêiner
 meuContainer.addEventListener('mouseenter', function () {
@@ -44,5 +42,5 @@ meuContainer.addEventListener('mouseenter', function () {
 meuContainer.addEventListener('mouseleave', function () {
     intervaloCasas = setInterval(function () {
         avancarCasa();
-    }, 5000);
+    }, 2000);
 });

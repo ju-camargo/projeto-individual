@@ -1,5 +1,6 @@
 create database harrypotter;
 use harrypotter;
+drop database harrypotter;
 
 create table casa (
 	idCasa int primary key auto_increment,
