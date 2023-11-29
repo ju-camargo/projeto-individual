@@ -12,6 +12,7 @@ var indexRouter = require("./src/routes/index")
 var usuarioRouter = require("./src/routes/usuarios");
 var petRouter = require("./src/routes/pet");
 var avaliacaoRouter = require("./src/routes/avaliacao");
+var quizRouter = require("./src/routes/quiz");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -23,6 +24,7 @@ app.use("/index", indexRouter);
 app.use("/usuarios", usuarioRouter);
 app.use("/pet", petRouter);
 app.use("/avaliacao", avaliacaoRouter);
+app.use("/quiz", quizRouter);
 
 app.listen(PORTA, function () {
     console.log(`Servidor do seu site já está rodando! Acesse o caminho a seguir para visualizar: http://localhost:${PORTA} \n

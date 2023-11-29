@@ -25,7 +25,6 @@ function atualizarEstrelas(selecionadas) {
     }
 }
 
-
 function avaliar1(){
     // var fkFilmeVar = sessionStorage.ID_FILME;
     // var fkFilmeVar = 1;
@@ -44,6 +43,7 @@ function avaliar1(){
         }),
     })
         .then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!");
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {

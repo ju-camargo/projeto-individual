@@ -11,10 +11,6 @@ insert into casa values
     (null, 'Lufa-lufa'), -- 101
     (null, 'Corvinal'), -- 102
     (null, 'Sonserina'); -- 103
-    
-select * from casa;
-
-INSERT INTO usuario (fkCasa) VALUES (100);
 
 create table usuario (
 	idUsuario int primary key auto_increment,
@@ -25,13 +21,6 @@ create table usuario (
     constraint fkcasa foreign key (fkCasa)
 		references casa (idCasa)
 );
-
-
-select * from usuario;
-select * from pet;
-delete from pet where idPet = 4;
-truncate pet;
-truncate usuario;
 
 create table pet (
 	idPet int primary key auto_increment,
@@ -69,8 +58,21 @@ create table avaliacao (
 		references usuario (idUsuario)
 );
 
+select * from usuario;
+select * from casa;
 select * from avaliacao;
-truncate avaliacao;
+select * from pet;
 
-select pet.*, u.nome from usuario as u
-join pet on fkDono = idUsuario;
+select u.nome, u.fkCasa, c.nome from usuario as u 
+join casa as c on u.fkCasa = c.idCasa;
+
+select u.nome, u.fkCasa, c.nome from usuario as u 
+join casa as c on u.fkCasa = c.idCasa
+	where c.idCasa = 101;
+
+select u.nome as nomeUsuario, f.nome as nomeFilme, a.estrelas from usuario as u
+join avaliacao as a on a.fkUsuario = u.idUsuario
+join filme as f on a.fkFilme = f.idFilme;
+
+select p.nome as nomePet, p.tipo as raça, u.nome as dono from usuario as u
+join pet as p on p.fkDono = u.idUsuario;
