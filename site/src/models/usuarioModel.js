@@ -29,7 +29,7 @@ function pegarCaracteres (idUsuario){
     var instrucao = `
     SELECT  c.nome AS nomeCasa, MAX(f.nome) AS ultimoNomeFilme, p.nome AS nomePet
         FROM usuario as u JOIN pet as p ON p.fkDono = u.idUsuario JOIN casa as c ON u.fkCasa = c.idCasa JOIN avaliacao as a ON a.fkUsuario = u.idUsuario
-         JOIN filme as f ON a.fkFilme = f.idFilme  WHERE ${idUsuario} = 1 GROUP BY u.idUsuario, c.nome, p.nome;
+         JOIN filme as f ON a.fkFilme = f.idFilme  WHERE u.idUsuario = ${idUsuario} GROUP BY u.idUsuario, c.nome, p.nome;
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -38,5 +38,5 @@ function pegarCaracteres (idUsuario){
 module.exports = {
     autenticar,
     cadastrar,
-    pegarCaracteres
+    pegarCaracteres,
 };

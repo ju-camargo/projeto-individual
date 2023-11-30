@@ -84,20 +84,37 @@ function pegarCaracteres(req, res) {
     var idUsuario = req.body.idUsuarioServer;
 
     if (idUsuario == undefined) {
+        console.log(idUsuario);
         res.status(400).send("Seu nome está undefined!");
     }
     else {
 
-        usuarioModel.pegarCaracteres(idUsuario)
+        usuarioModel
+            .pegarCaracteres(idUsuario)
             .then(
-                function (resultado) {
-                    res.json(resultado);
+                function (resultadoCasa) {
+                    console.log(`\nResultados encontrados controller: ${resultadoCasa.length}`);
+                    console.log(`Resultadoscontroler: ${JSON.stringify(resultadoCasa)}`); // transforma JSON em String
+
+                    if (resultadoCasa.length == 1) {
+                        console.log(`ifController`,resultadoCasa);
+                        res.json({
+                            nomePet: resultadoCasa[0].nomePet,
+                            nomeCasa: resultadoCasa[0].nomeCasa,
+                            nomeFilme: resultadoCasa[0].ultimoNomeFilme,
+                        });
+                    }
+                    else{
+                        console.log(`elseController`,resultadoCasa);
+                        res.status(204).json({ nomes: [] });
+                    }
                 }
-            ).catch(
+            )
+            .catch(
                 function (erro) {
                     console.log(erro);
                     console.log(
-                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        "\nHouve um erro ao buscar dados das casas! Erro: ",
                         erro.sqlMessage
                     );
                     res.status(500).json(erro.sqlMessage);
@@ -110,5 +127,5 @@ function pegarCaracteres(req, res) {
 module.exports = {
     autenticar,
     cadastrar,
-    pegarCaracteres
+    pegarCaracteres,
 }

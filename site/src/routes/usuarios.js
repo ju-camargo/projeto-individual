@@ -13,7 +13,7 @@ router.post("/autenticar", function (req, res) {
 });
 
 router.post("/pegarCaracteres", function (req, res) {
-    usuarioController.autenticar(req, res);
+    usuarioController.pegarCaracteres(req, res);
 });
 
 module.exports = router;

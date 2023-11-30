@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/style-dashboard.css">
 </head>
 
-<body onload="chamarCaracteres()">
+<body>
     <div class="box-maior">
         <div class="inner-box">
             <div class="div_esquerda">
@@ -69,7 +69,7 @@
                     <div class="div_info">
                         <div class="div_casa">
                             <img src="./assets/home/chapeu.png" alt="" style="width: 200px;">
-                            <p>Sua casa é:</p> <span id="n_casa"></span>
+                            <p>Sua casa é:</p> <b id="n_casa"></b>
 
                             <!-- <div class="div_resultado">
                                 <p>resultado</p>
@@ -81,7 +81,9 @@
 
                         <div class="div_filmes">
                             <img src="./assets/home/plat.png" alt="" style="width: 130px;">
-                            <p>Seu último filme avaliado:</p> <span id="n_filme"></span>
+
+                            <p>Seu último filme avaliado:</p> <b id="n_filme"></b>
+
 
                             <p>Ainda não avaliou nenhum <br>
                                 filme? Avalie por <a href="./avaliacao.html" style="color: inherit;">aqui.</a></p>
@@ -90,7 +92,7 @@
                         <div class="div_pet">
                             <!-- <b>Escolha também um pet para você levar para Hogwarts:</b> -->
                             <img src="./assets/dashboard/edwiges.png" alt="" style="width: 100px;">
-                            <p>Seu pet:</p> <span id="n_pet"></span>
+                            <p>Seu pet:</p> <b id="n_pet"></b>
 
                             <p>Ainda não cadastrou seu pet? <br>
                                 Cadastre por <a href="./pet.html" style="color: inherit;">aqui.</a></p>
@@ -114,43 +116,51 @@
 
     // var nomeCasaVar =
 
-        function chamarCaracteres() {
-            var idUsuarioVar = sessionStorage.ID_USUARIO;
+    function chamarCaracteres() {
+        var idUsuarioVar = sessionStorage.ID_USUARIO;
+        var filme = document.getElementById("n_filme");
+        var pet = document.getElementById("n_pet");
+        var casa = document.getElementById("n_casa");
 
-            fetch("/usuario/pegarCaracteres", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    idUsuarioServer: idUsuarioVar
-                }),
-
-            }).then(function (resultado) {
+        fetch("/usuarios/pegarCaracteres", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idUsuarioServer: idUsuarioVar,
+            }),
+        })
+            .then(function (resultado) {
                 console.log("ESTOU NO THEN DO entrar()!");
-                console.log("resposta: ", resultado);
+                console.log(".....", resultado);
 
                 if (resultado.ok) {
+                    // console.log("resposta: ", resultado.json());
                     // alert("Gráfico carregado com sucesso!");
-                    resultado.json().then(resultado => {
-                    console.log(json);
-                    console.log(JSON.stringify(json));
-                        // insereGrafico2(resultado);
-                    })
+
+
+                    resultado.json()
+                        .then((json) => {
+                            casa.innerText = json.nomeCasa;
+                            filme.innerText = json.nomeFilme;
+                            pet.innerText = json.nomePet;
+                            // insereGrafico2(resultado);
+                        })
 
                 } else {
                     console.log("Houve um erro ao tentar exibir as informações!");
                     alert("Erro");
 
-                    resultado.text().then(texto => {
-                        console.error(texto);
-                    });
+                    // resultado.text().then(texto => {
+                    //     console.error(texto);
+                    // });
                 }
             }).catch(function (erro) {
                 console.log(erro);
                 console.log(`#ERRO: ${resultado}`);
             });
-        }
+    }
 
 
     // var nomePet = sessionStorage.NOME_PET;
@@ -180,5 +190,7 @@
     // else{
     //     n_filme.innerHTML = nomeFilme;
     // }
+
+    window.onload = chamarCaracteres();
 
 </script>
