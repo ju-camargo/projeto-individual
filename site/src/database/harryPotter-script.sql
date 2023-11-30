@@ -61,10 +61,67 @@ create table avaliacao (
 
 select * from usuario;
 select * from casa;
+select * from filme;
 select * from avaliacao;
 select * from pet;
 
-select u.nome, u.fkCasa, c.nome from usuario as u 
+select count(u.fkCasa) as casas, c.nome from usuario as u join casa as c ON u.fkcasa = c.idcasa group by c.nome;
+        SELECT
+            idUsuario,
+            pet.nome AS nomePet,
+            usuario.nome AS nomeUsuario,
+            fkCasa,
+            casa.nome AS nomeCasa,
+            email, filme.nome as nomeFilme
+        FROM
+            usuario
+               left
+               JOIN
+            pet ON fkDono = idUsuario
+               left JOIN
+            casa ON fkCasa = idCasa
+               left JOIN
+            avaliacao ON fkUsuario = idUsuario
+                   left JOIN
+            filme ON fkFilme = idFilme  WHERE email = 'gabriel.amaral@sptech.school' AND senha = 'Alice1' limit 1
+        ;
+
+select * from avaliacao join usuario on fkUsuario = idUsuario where idUsuario = 1;
+
+SELECT 
+    idUsuario,
+    pet.nome AS nomePet,
+    usuario.nome AS nomeUsuario,
+    fkCasa,
+    casa.nome AS nomeCasa,
+    email, filme.nome as nomeFilme
+FROM
+    usuario
+        JOIN
+    pet ON fkDono = idUsuario
+        JOIN
+    casa ON fkCasa = idCasa
+        JOIN
+    avaliacao ON fkUsuario = idUsuario
+            JOIN
+    filme ON fkFilme = idFilme where idUsuario = 1 limit 1
+;
+
+select count(a.estrelas) as estrelas, f.nome from avaliacao as a join filme as f ON a.fkFilme = f.idFilme group by a.estrelas;
+
+SELECT COUNT(a.estrelas) as estrelas, MAX(f.nome) as nome
+FROM avaliacao as a
+JOIN filme as f ON a.fkFilme = f.idFilme
+GROUP BY a.estrelas;
+
+select count(a.estrelas) as estrelas, f.nome from avaliacao as a join filme as f ON a.fkFilme = f.idFilme group by f.nome;
+
+select count(a.estrelas) as estrelas, f.nome from avaliacao as a join filme as f on a.fkFilme = f.idFilme where a.estrelas <= 5 and a.estrelas >= 3 group by f.nome;
+select count(a.estrelas) as estrelas, f.nome from avaliacao as a join filme as f on a.fkFilme = f.idFilme where a.estrelas < 3 group by f.nome;
+
+select count(fkCasa) from usuario group by fkCasa;
+
+select u.nome, u.fkCasa, c.nome from usuario as u join casa as c ON u.fkcasa = c.idcasa order by c.nome;
 join casa as c on u.fkCasa = c.idCasa;
 
 select u.nome, u.fkCasa, c.nome from usuario as u 

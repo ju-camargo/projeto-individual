@@ -176,6 +176,18 @@ function avaliar8(req, res) {
         );
 }
 
+function pegarFilme(req, res) {
+
+    avaliacaoModel.pegarFilme5()
+        .then(function (resultado) {
+            res.json(resultado);
+        })
+        .catch(function (erro) {
+            console.error(erro);
+            res.status(500).json("Erro ao cadastrar a casa do usuário.");
+        });
+}
+
 module.exports = {
     avaliar1, 
     avaliar2,
@@ -184,5 +196,6 @@ module.exports = {
     avaliar5,
     avaliar6,
     avaliar7,
-    avaliar8
+    avaliar8,
+    pegarFilme
 }

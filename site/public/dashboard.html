@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/style-dashboard.css">
 </head>
 
-<body>
+<body onload="">
     <div class="box-maior">
         <div class="inner-box">
             <div class="div_esquerda">
@@ -71,31 +71,31 @@
                     <div class="div_info">
                         <div class="div_casa">
                             <img src="./assets/home/chapeu.png" alt="" style="width: 200px;">
-                            <p>Sua casa é:</p> <b id=""></b>
+                            <p>Sua casa é:</p> <span id="n_casa"></span>
 
                             <!-- <div class="div_resultado">
                                 <p>resultado</p>
                             </div> -->
 
                             <p>Ainda não realizou o teste? <br>
-                                Realize ele por aqui.</p>
+                                Realize ele por <a href="./quiz.html" style="color: inherit;">aqui.</a></p>
                         </div>
 
                         <div class="div_filmes">
                             <img src="./assets/home/plat.png" alt="" style="width: 130px;">
-                            <p>Seu último filme avaliado:</p> <b id=""></b>
+                            <p>Seu último filme avaliado:</p> <span id="n_filme"></span>
 
                             <p>Ainda não avaliou nenhum <br>
-                                filme? Avalie por aqui.</p>
+                                filme? Avalie por <a href="./avaliacao.html" style="color: inherit;">aqui.</a></p>
                         </div>
 
                         <div class="div_pet">
                             <!-- <b>Escolha também um pet para você levar para Hogwarts:</b> -->
                             <img src="./assets/dashboard/edwiges.png" alt="" style="width: 100px;">
-                            <p>Seu pet:</p> <b id="n_pet"></b>
+                            <p>Seu pet:</p> <span id="n_pet"></span>
 
                             <p>Ainda não cadastrou seu pet? <br>
-                                Cadastre por aqui.</p>
+                                Cadastre por <a href="./pet.html" style="color: inherit;">aqui.</a></p>
                         </div>
                     </div>
                 </div>
@@ -110,10 +110,34 @@
 </html>
 <script>
     var nome = sessionStorage.NOME_USUARIO;
-    b_usuario.innerHTML = (`${nome}!`);
+    b_usuario.innerHTML = nome;
 
     var nomePet = sessionStorage.NOME_PET;
-    n_pet.innerHTML = (`${nomePet}`);
+    console.log(nomePet);
 
+    if(nomePet == "null"){
+        n_pet.innerHTML = "Ainda não cadastrado";
+    }
+    else {
+        n_pet.innerHTML = nomePet;
+    }
+
+    var nomeCasa = sessionStorage.NOME_CASA;
+    console.log(nomeCasa);
+    if(nomeCasa == "null"){
+        n_casa.innerHTML = "Ainda não cadastrado";   
+    }
+    else {
+        n_casa.innerHTML = nomeCasa;
+    }
+
+    var nomeFilme = sessionStorage.NOME_FILME;
+    console.log(nomeFilme);
+    if(nomeFilme == "null"){
+        n_filme.innerHTML = "Ainda não cadastrado";
+    }
+    else{
+        n_filme.innerHTML = nomeFilme;
+    }
     
 </script>

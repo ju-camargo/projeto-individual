@@ -8,4 +8,8 @@ router.post("/cadastrarCasa", function (req, res) {
     quizController.cadastrarCasa(req, res);
 })
 
+router.post("/pegarCasa", function (req, res) {
+    quizController.pegarCasa(req, res);
+})
+
 module.exports = router;

@@ -337,8 +337,9 @@
             </div>
 
             <div class="div_direita">
-                <p>Com base em suas avaliações, seus <br>
-                    3 primeiros filmes favoritos são:</p>
+                <img src="./assets/home/plat.png" alt="" style="width: 200px;"> <br>
+                <p>Avaliação de filmes</p> 
+                <!-- <p id="n_filme"></p> -->
 
             </div>
 
@@ -349,5 +350,11 @@
 
 </html>
 <script>
-    
+    var nomeFilme = sessionStorage.NOME_FILME;
+    if(nomeFilme == undefined){
+        n_filme.innerHTML = "Ainda não cadastrado";
+    }
+    else{
+        n_filme.innerHTML = (`${nomeFilme}`);
+    }
 </script>

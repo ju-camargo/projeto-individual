@@ -29,6 +29,15 @@ function cadastrarCasa(idUsuario, idCasa, fkCasa) {
     return database.executar(instrucao);
 }
 
+function pegarCasa(){
+    var instrucao = `
+    select count(u.fkCasa) as casas, c.nome from usuario as u join casa as c ON u.fkcasa = c.idcasa group by c.nome;
+    `
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 module.exports = {
-    cadastrarCasa
+    cadastrarCasa,
+    pegarCasa
 };

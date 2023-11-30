@@ -36,10 +36,10 @@
                     <li>
                         <a href="./pet.html">Cadastrar pet</a>
                     </li>
-
+                    <!-- 
                     <li>
                         <a href="">Avaliações</a>
-                    </li>
+                    </li> -->
 
                     <li>
                         <a href="./graficos.html">Gráficos</a>
@@ -66,7 +66,7 @@
                 </div>
 
                 <div class="grafico-filmes" id="div_filmes">
-                    <p>Avaliações por estrelas</p>
+                    <p>Quantidade de pessoas que deram 5 estrelas</p>
                     <canvas id="myChart"></canvas>
                 </div>
 
@@ -83,6 +83,142 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
+    fetch("/quiz/pegarCasa", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+
+    }).then(function (resultado) {
+        console.log("ESTOU NO THEN DO entrar()!");
+        console.log("resposta: ", resultado);
+
+        if (resultado.ok) {
+            alert("Gráfico carregado com sucesso!");
+            resultado.json().then(resultado => {
+
+                insereGrafico1(resultado);
+            })
+
+        } else {
+            console.log("Houve um erro ao tentar carregar o gráfico!");
+            alert("Erro");
+
+            resultado.text().then(texto => {
+                console.error(texto);
+            });
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log(`#ERRO: ${resultado}`);
+    });
+
+    function insereGrafico1(resultado) {
+        const ctx2 = document.getElementById('myChart2');
+
+        var qtdPessoas = [];
+        var nomeCasas = [];
+
+        for (var i = 0; i < resultado.length; i++) {
+            var qtd = resultado[i].casas;
+            var nome = resultado[i].nome;
+            console.log(qtd, nome)
+            qtdPessoas.push(qtd);
+            nomeCasas.push(nome);
+        }
+
+        console.log(qtdPessoas, nomeCasas)
+
+        new Chart(ctx2, {
+            type: 'doughnut',
+            data: {
+                labels: nomeCasas,
+                datasets: [{
+                    label: 'Pessoas:',
+                    data: qtdPessoas,
+                    backgroundColor: [
+                        'rgb(156, 17, 17)',
+                        'rgb(57, 108, 46)',
+                        'rgb(251, 236, 93)',
+                        'rgb(10, 73, 123)'
+                    ],
+                    hoverOffset: 4
+                }]
+            }
+        });
+    }
+
+    fetch("/avaliacao/pegarFilme", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+
+    }).then(function (resultado) {
+        console.log("ESTOU NO THEN DO entrar()!");
+        console.log("resposta: ", resultado);
+
+        if (resultado.ok) {
+            alert("Gráfico carregado com sucesso!");
+            resultado.json().then(resultado => {
+
+                insereGrafico2(resultado);
+            })
+
+        } else {
+            console.log("Houve um erro ao tentar carregar o gráfico!");
+            alert("Erro");
+
+            resultado.text().then(texto => {
+                console.error(texto);
+            });
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log(`#ERRO: ${resultado}`);
+    });
+
+    function insereGrafico2(resultado) {
+        const ctx = document.getElementById('myChart');
+
+        var qtdEstrelas5 = 0;
+        var qtdEstrelas1 = 0;
+
+        var qtdEstrelas = [];
+        var nomeFilmes = [];
+
+        for (var i = 0; i < resultado.length; i++) {
+            var qtd = resultado[i].estrelas;
+            var nome = resultado[i].nome;
+            console.log(qtd, nome)
+            qtdEstrelas.push(qtd);
+            nomeFilmes.push(nome);
+
+        }
+
+        console.log(qtdEstrelas, nomeFilmes);
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: nomeFilmes,
+                datasets: [{
+                    label: 'Pessoas',
+                    data: qtdEstrelas,
+                    borderWidth: 1
+                },
+                ]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    }
+
 
     function selecionarGrafico() {
         var selecao = selecao_filtro.value;
@@ -97,83 +233,9 @@
         }
     }
 
-
-    const ctx = document.getElementById('myChart'); //filmes
-    const ctx2 = document.getElementById('myChart2'); //casas
-
-    new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['1', '2', '3', '4', '5', '6', '7', '8'],
-            datasets: [{
-                label: '5 estrelas',
-                data: [22, 24, 27, 23, 20, 18, 45, 18],
-                borderWidth: 1
-            },
-            {
-
-                label: '1 estrela',
-                data: [90, 89, 93, 87, 88, 82, 21, 41],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-
-
-    new Chart(ctx2, {
-        type: 'doughnut',
-        data: {
-            labels: ['Grifinória', 'Sonserina', 'Lufa-Lufa', 'Corvinal'],
-            datasets: [{
-                label: 'Pessoas:',
-                data: [300, 50, 100, 230],
-                backgroundColor: [
-                    'rgb(156, 17, 17)',
-                    'rgb(57, 108, 46)',
-                    'rgb(251, 236, 93)',
-                    'rgb(10, 73, 123)'
-                ],
-                hoverOffset: 4
-            }]
-        }
-    });
-
     /* cores para casas:
 lufa-lufa: #fbec5d
 grifinoria: #9c1111
 corvinal: #0a497b
 sonserina: #396c2e*/
-
-    function obterDadosGrafico(idAquario) {
-
-        alterarTitulo(idAquario)
-
-        if (proximaAtualizacao != undefined) {
-            clearTimeout(proximaAtualizacao);
-        }
-
-        fetch(`/medidas/ultimas/${idAquario}`, { cache: 'no-store' }).then(function (response) {
-            if (response.ok) {
-                response.json().then(function (resposta) {
-                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                    resposta.reverse();
-
-                    plotarGrafico(resposta, idAquario);
-
-                });
-            } else {
-                console.error('Nenhum dado encontrado ou erro na API');
-            }
-        })
-            .catch(function (error) {
-                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-            });
-    }
 </script>

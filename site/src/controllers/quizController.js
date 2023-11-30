@@ -16,7 +16,20 @@ function cadastrarCasa(req, res) {
         });
 }
 
+function pegarCasa(req, res) {
+
+    quizModel.pegarCasa()
+        .then(function (resultado) {
+            res.json(resultado);
+        })
+        .catch(function (erro) {
+            console.error(erro);
+            res.status(500).json("Erro ao cadastrar a casa do usuário.");
+        });
+}
+
 
 module.exports = {
-    cadastrarCasa
+    cadastrarCasa,
+    pegarCasa
 }

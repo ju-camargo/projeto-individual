@@ -36,4 +36,8 @@ router.post("/avaliar8", function (req, res) {
     avaliacaoController.avaliar8(req, res);
 })
 
+router.post("/pegarFilme", function (req, res) {
+    avaliacaoController.pegarFilme(req, res);
+})
+
 module.exports = router;
