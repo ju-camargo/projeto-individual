@@ -69,31 +69,32 @@
                     <div class="div_info">
                         <div class="div_casa">
                             <img src="./assets/home/chapeu.png" alt="" style="width: 200px;">
-                            <p>Sua casa é:</p> <span id="n_casa"></span>
+                            <b><a href="./quiz.html">Chapéu Seletor</a></b>
+                            <!-- <p>Sua casa é:</p> <span id="n_casa"></span> -->
 
                             <!-- <div class="div_resultado">
                                 <p>resultado</p>
                             </div> -->
 
-                            <p>Ainda não realizou o teste? <br>
-                                Realize ele por <a href="./quiz.html" style="color: inherit;">aqui.</a></p>
+                            <p>Realize o teste clicando acima.</p>
                         </div>
 
                         <div class="div_filmes">
                             <img src="./assets/home/plat.png" alt="" style="width: 130px;">
-                            <p>Seu último filme avaliado:</p> <span id="n_filme"></span>
+                            <!-- <p>Seu último filme avaliado:</p> <span id="n_filme"></span> -->
+                            <b><a href="./avaliacao.html">Avaliação dos filmes</a></b>
 
-                            <p>Ainda não avaliou nenhum <br>
-                                filme? Avalie por <a href="./avaliacao.html" style="color: inherit;">aqui.</a></p>
+                            <p>Avalie os filmes clicando acima.</p>
                         </div>
 
                         <div class="div_pet">
                             <!-- <b>Escolha também um pet para você levar para Hogwarts:</b> -->
                             <img src="./assets/dashboard/edwiges.png" alt="" style="width: 100px;">
-                            <p>Seu pet:</p> <span id="n_pet"></span>
+                            <!-- <p>Seu pet:</p> <span id="n_pet"></span> -->
+                            <b><a href="./pet.html">Escolha também um pet para
+                                você levar para Hogwarts!</a></b>
 
-                            <p>Ainda não cadastrou seu pet? <br>
-                                Cadastre por <a href="./pet.html" style="color: inherit;">aqui.</a></p>
+                            <p>Cadastre seu pet clicando acima.</p>
                         </div>
                     </div>
                 </div>
@@ -114,43 +115,43 @@
 
     // var nomeCasaVar =
 
-        function chamarCaracteres() {
-            var idUsuarioVar = sessionStorage.ID_USUARIO;
+        // function chamarCaracteres() {
+        //     var idUsuarioVar = sessionStorage.ID_USUARIO;
 
-            fetch("/usuario/pegarCaracteres", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    idUsuarioServer: idUsuarioVar
-                }),
+        //     fetch("/usuario/pegarCaracteres", {
+        //         method: "POST",
+        //         headers: {
+        //             "Content-Type": "application/json"
+        //         },
+        //         body: JSON.stringify({
+        //             idUsuarioServer: idUsuarioVar
+        //         }),
 
-            }).then(function (resultado) {
-                console.log("ESTOU NO THEN DO entrar()!");
-                console.log("resposta: ", resultado);
+        //     }).then(function (resultado) {
+        //         console.log("ESTOU NO THEN DO entrar()!");
+        //         console.log("resposta: ", resultado);
 
-                if (resultado.ok) {
-                    // alert("Gráfico carregado com sucesso!");
-                    resultado.json().then(resultado => {
-                    console.log(json);
-                    console.log(JSON.stringify(json));
-                        // insereGrafico2(resultado);
-                    })
+        //         if (resultado.ok) {
+        //             // alert("Gráfico carregado com sucesso!");
+        //             resultado.json().then(resultado => {
+        //             console.log(json);
+        //             console.log(JSON.stringify(json));
+        //                 // insereGrafico2(resultado);
+        //             })
 
-                } else {
-                    console.log("Houve um erro ao tentar exibir as informações!");
-                    alert("Erro");
+        //         } else {
+        //             console.log("Houve um erro ao tentar exibir as informações!");
+        //             alert("Erro");
 
-                    resultado.text().then(texto => {
-                        console.error(texto);
-                    });
-                }
-            }).catch(function (erro) {
-                console.log(erro);
-                console.log(`#ERRO: ${resultado}`);
-            });
-        }
+        //             resultado.text().then(texto => {
+        //                 console.error(texto);
+        //             });
+        //         }
+        //     }).catch(function (erro) {
+        //         console.log(erro);
+        //         console.log(`#ERRO: ${resultado}`);
+        //     });
+        // }
 
 
     // var nomePet = sessionStorage.NOME_PET;

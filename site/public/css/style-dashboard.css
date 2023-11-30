@@ -219,9 +219,17 @@ a {
     width: 30%;
     height: 100%;
     border-radius: 15px;
+    margin: 10px;
     /* gap: 25px; */
     /* background-color: #463931; */
     background-color: rgba(59, 43, 36, 0.2);
+}
+
+.div_pet b{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15px;
 }
 
 

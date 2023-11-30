@@ -60,17 +60,17 @@
             <div class="div_direita">
                 <div class="filtro">
                     <select name="" id="selecao_filtro" onchange="selecionarGrafico()">
-                        <option value="filmes">Filmes</option>
                         <option value="casas">Casas</option>
+                        <option value="filmes">Filmes</option>
                     </select>
                 </div>
 
-                <div class="grafico-filmes" id="div_filmes">
+                <div class="grafico-filmes" id="div_filmes" style="display: none;">
                     <p>Quantidade de pessoas que deram 5 estrelas</p>
                     <canvas id="myChart"></canvas>
                 </div>
 
-                <div class="grafico-casas" id="div_casas" style="display: none;">
+                <div class="grafico-casas" id="div_casas">
                     <p>Quantidade de Pessoas por Casas</p>
                     <canvas id="myChart2"></canvas>
                 </div>
@@ -94,7 +94,7 @@
         console.log("resposta: ", resultado);
 
         if (resultado.ok) {
-            alert("Gráfico carregado com sucesso!");
+            // alert("Gráfico carregado com sucesso!");
             resultado.json().then(resultado => {
 
                 insereGrafico1(resultado);
@@ -138,9 +138,9 @@
                     data: qtdPessoas,
                     backgroundColor: [
                         'rgb(156, 17, 17)',
-                        'rgb(57, 108, 46)',
                         'rgb(251, 236, 93)',
-                        'rgb(10, 73, 123)'
+                        'rgb(10, 73, 123)',
+                        'rgb(57, 108, 46)'
                     ],
                     hoverOffset: 4
                 }]
@@ -159,7 +159,7 @@
         console.log("resposta: ", resultado);
 
         if (resultado.ok) {
-            alert("Gráfico carregado com sucesso!");
+            // alert("Gráfico carregado com sucesso!");
             resultado.json().then(resultado => {
 
                 insereGrafico2(resultado);
@@ -224,6 +224,7 @@
         var selecao = selecao_filtro.value;
 
         if (selecao == "casas") {
+            
             div_filmes.style.display = 'none';
             div_casas.style.display = 'flex';
         }
