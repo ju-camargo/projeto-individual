@@ -25,7 +25,6 @@ function retrocederFoto() {
 }
 
 function atualizarFoto() {
-    // meuContainer.innerHTML = fotos[i];
     var item = fotos[i];
 
     if (item.startsWith('./assets/home/index')) {
@@ -33,12 +32,10 @@ function atualizarFoto() {
     }
 }
 
-// Adiciona a funcionalidade de carrossel automático
 var intervaloFotos = setInterval(function () {
     avancarFoto();
-}, 5000); 
+}, 5000);
 
-// Retoma a troca automática quando o mouse sai do contêiner
 meuContainer3.addEventListener('mouseleave', function () {
     intervaloFotos = setInterval(function () {
         avancarFoto();

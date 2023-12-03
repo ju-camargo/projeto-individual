@@ -42,5 +42,5 @@ meuContainer.addEventListener('mouseenter', function () {
 meuContainer.addEventListener('mouseleave', function () {
     intervalo = setInterval(function () {
     avançar();
-    }, 5000);
+    }, 3000);
 });

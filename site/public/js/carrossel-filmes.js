@@ -32,17 +32,14 @@ function atualizarFilme() {
 }
 
 
-// Adiciona a funcionalidade de carrossel automático
 var intervaloFilmes = setInterval(function () {
     avancarFilme();
 }, 2000);
 
-// Pára a troca automática quando o mouse entra no contêiner
 meuContainer2.addEventListener('mouseenter', function () {
     clearInterval(intervalo2);
 });
 
-// Retoma a troca automática quando o mouse sai do contêiner
 meuContainer2.addEventListener('mouseleave', function () {
     intervaloFilmes = setInterval(function () {
         avancarFilme();

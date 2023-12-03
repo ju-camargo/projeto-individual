@@ -84,7 +84,6 @@
                     <div class="resultado">
                         <b>Informações de seu pet:</b> <br>
 
-                        <!-- <div id="listarPet"></div> -->
                         Nome do Pet: <b id="nomePet"></b>
                         Raça: <b id="raca"></b>
                         Dono: <b id="b_usuario"></b>
@@ -106,10 +105,6 @@
         var fkDonoVar = sessionStorage.ID_USUARIO;
         var nome = sessionStorage.NOME_USUARIO;
 
-        // listarPet.innerHTML = `
-        //     Nome do pet: ${nomeVar} <br>
-        //     Raça: ${tipoVar} <br>
-        // `
         nomePet.innerHTML = `${nomeVar}`
         raca.innerHTML = `${tipoVar}`
         b_usuario.innerHTML = `${nome}`

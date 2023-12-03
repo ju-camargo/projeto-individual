@@ -28,17 +28,14 @@ function atualizarCasa() {
     }
 }
 
-// Adiciona a funcionalidade de carrossel automático
 var intervaloCasas = setInterval(function () {
     avancarCasa();
 }, 2000); 
 
-// Pára a troca automática quando o mouse entra no contêiner
 meuContainer.addEventListener('mouseenter', function () {
     clearInterval(intervalo);
 });
 
-// Retoma a troca automática quando o mouse sai do contêiner
 meuContainer.addEventListener('mouseleave', function () {
     intervaloCasas = setInterval(function () {
         avancarCasa();

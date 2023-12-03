@@ -221,9 +221,6 @@
 
             div_resultado.innerHTML = `${casa}`
 
-            //vai ter a tabela casa contendo os nomes das casas -> if(casa = 'Grifinória' == idCasa = 100)
-            // oq preciso cadastrar é a fkCasa na tabela usuario
-
             fetch("/quiz/cadastrarCasa", {
                 method: "POST",
                 headers: {

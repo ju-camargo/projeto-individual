@@ -85,13 +85,18 @@ select c.nome from usuario as u
 join casa as c on u.fkCasa = c.idCasa where idUsuario = 1;
 
 -- selects para pegar caracteres para dashboard
-SELECT  c.nome AS nomeCasa, MAX(f.nome) AS ultimoNomeFilme, p.nome AS nomePet
+SELECT  u.nome, c.nome AS nomeCasa, MAX(f.nome) AS ultimoNomeFilme, p.nome AS nomePet
 FROM usuario as u JOIN pet as p ON p.fkDono = u.idUsuario JOIN casa as c ON u.fkCasa = c.idCasa JOIN avaliacao as a ON a.fkUsuario = u.idUsuario
 JOIN filme as f ON a.fkFilme = f.idFilme  WHERE idUsuario = 1 GROUP BY u.idUsuario, c.nome, p.nome;
          
 SELECT  c.nome AS nomeCasa, f.nome as nomeFilme, p.nome AS nomePet
 FROM usuario as u JOIN pet as p ON p.fkDono = u.idUsuario JOIN casa as c ON u.fkCasa = c.idCasa JOIN avaliacao as a ON a.fkUsuario = u.idUsuario
 JOIN filme as f ON a.fkFilme = f.idFilme;
+
+
+ SELECT  c.nome AS nomeCasa, MAX(f.nome) AS ultimoNomeFilme, p.nome AS nomePet
+        FROM usuario as u JOIN pet as p ON p.fkDono = u.idUsuario JOIN casa as c ON u.fkCasa = c.idCasa JOIN avaliacao as a ON a.fkUsuario = u.idUsuario
+         JOIN filme as f ON a.fkFilme = f.idFilme  WHERE u.idUsuario = ${idUsuario} GROUP BY u.idUsuario, c.nome, p.nome;
 
 -- selects para cadastro de usuario (pensando em ja armazenar os caracteres para dash
 select count(u.fkCasa) as casas, c.nome from usuario as u join casa as c ON u.fkcasa = c.idcasa group by c.nome;
